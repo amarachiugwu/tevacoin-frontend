@@ -7,7 +7,7 @@ export default function Layout(props) {
     let location = useLocation()
 
     return (
-        <div id="appCapsule">
+        <div className="page-wrapper">
 
             <Outlet />
             <>

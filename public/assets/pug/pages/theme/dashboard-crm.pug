@@ -1,0 +1,974 @@
+- var prism                 = true;
+- var chartjs               = true;
+- var ckeditor              = true;
+- var chartist              = true;
+- var morrischart           = true;
+- var apex                  = true;
+- var owlcarousel           = true;
+- var clipboard             = true;
+- var customcard            = true;
+- var chat_menu             = true;
+- var theme_customizer      = true;
+- var tooltip               = true;
+- var dashboard_crm         = true;
+- var counter               = true;
+
+doctype html
+html(lang='en')
+    include ../../components/header-files
+    body
+        include ../../components/loader
+        // page-wrapper Start
+        .page-wrapper
+            include ../../components/header
+            // Page Body Start
+            .page-body-wrapper
+                include ../../components/sidebar
+                include ../../components/chat-sidebar
+                .page-body
+                    .container-fluid
+                        .page-header
+                            .row
+                                .col-lg-6
+                                    h3 
+                                      | Crm
+                                    ol.breadcrumb
+                                        li.breadcrumb-item
+                                          a(href='index.html')
+                                           | Home
+                                        li.breadcrumb-item Dashboard
+                                        li.breadcrumb-item.active CRM
+                                .col-lg-6
+                                  include ../../components/bookmark
+                    // Container-fluid starts
+                    .container-fluid
+                      .row
+                        .col-xl-8.xl-60.box-col-12
+                          .card
+                            .card-header
+                              h5 Total Project
+                              .card-header-right
+                                ul.list-unstyled.card-option
+                                  li
+                                    i.icofont.icofont-double-left
+                                  li
+                                    i.view-html.fa.fa-code
+                                  li
+                                    i.icofont.icofont-maximize.full-card
+                                  li
+                                    i.icofont.icofont-minus.minimize-card
+                                  li
+                                    i.icofont.icofont-refresh.reload-card
+                                  li
+                                    i.icofont.icofont-error.close-card
+                            .card-body.chart-block
+                                #graph_rounded
+                                .code-box-copy
+                                  button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head', title='Copy')
+                                    i.icofont.icofont-copy-alt
+                                  pre
+                                    code.language-html#example-head
+                                        | &lt;!-- Cod Box Copy begin --&gt;
+                                        | &lt;div class="card-body chart-block"&gt;
+                                        | &lt;div id="graph_rounded"&gt;&lt;/div&gt;
+                                        | &lt;/div&gt;
+                                        | &lt;!-- Cod Box Copy end --&gt;
+                        .col-xl-4.xl-40.box-col-12
+                          .card.crm-chart-card
+                            .card-header.pb-0
+                              span.mt-0 September Total
+                              h3.mb-0 
+                                span 
+                                  i(data-feather='dollar-sign')
+                                  | 4,223,345
+                              span.badge.flat-badge-secondary.d-inline-block + 5.5% (10.1)
+                              .card-header-right
+                                ul.list-unstyled.card-option
+                                  li
+                                    i.icofont.icofont-double-left
+                                  li
+                                    i.view-html.fa.fa-code
+                                  li
+                                    i.icofont.icofont-maximize.full-card
+                                  li
+                                    i.icofont.icofont-minus.minimize-card
+                                  li
+                                    i.icofont.icofont-refresh.reload-card
+                                  li
+                                    i.icofont.icofont-error.close-card
+                            .card-body
+                              .dashboard-chart-container
+                                .full-chart
+                              .full-chart-bottom
+                                ul
+                                  li
+                                    a(href='#') 
+                                      h6.mb-0 1D
+                                  li
+                                    a(href='#')
+                                      h6.mb-0 2D
+                                  li.active
+                                    a(href='#')
+                                      h6.mb-0 3D
+                                  li
+                                    a(href='#')
+                                      h6.mb-0 4D
+                                  li
+                                    a(href='#')
+                                      h6.mb-0 5D
+                                button.btn.gradient-danger.btn-pill.btn-block
+                                  span.pull-left View Full Chart
+                                  span.d-inline-block.pull-right
+                                    span.round-icon
+                                      i(data-feather='arrow-right')
+                              .code-box-copy
+                                button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head1', title='Copy')
+                                  i.icofont.icofont-copy-alt
+                                pre
+                                  code.language-html#example-head1
+                                      | &lt;!-- Cod Box Copy begin --&gt;
+                                      | &lt;div class="dashboard-chart-container"&gt;
+                                      | &lt;div class="full-chart"&gt;&lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;div class="full-chart-bottom"&gt;
+                                      | &lt;ul&gt;
+                                      | &lt;li&gt;&lt;a href="#"&gt;
+                                      | &lt;h6 class="mb-0"&gt;1D&lt;/h6&gt;&lt;/a&gt;&lt;/li&gt;
+                                      | &lt;li&gt;&lt;a href="#"&gt;
+                                      | &lt;h6 class="mb-0"&gt;2D&lt;/h6&gt;&lt;/a&gt;&lt;/li&gt;
+                                      | &lt;li class="active"&gt;&lt;a href="#"&gt;
+                                      | &lt;h6 class="mb-0"&gt;3D&lt;/h6&gt;&lt;/a&gt;&lt;/li&gt;
+                                      | &lt;li&gt;&lt;a href="#"&gt;
+                                      | &lt;h6 class="mb-0"&gt;4D&lt;/h6&gt;&lt;/a&gt;&lt;/li&gt;
+                                      | &lt;li&gt;&lt;a href="#"&gt;
+                                      | &lt;h6 class="mb-0"&gt;5D&lt;/h6&gt;&lt;/a&gt;&lt;/li&gt;
+                                      | &lt;/ul&gt;
+                                      | &lt;button class="btn gradient-danger btn-pill btn-block"&gt;&lt;span class="pull-left"&gt;View Full Chart&lt;/span&gt;
+                                      | &lt;div class="d-inline-block pull-right"&gt;
+                                      | &lt;div class="round-icon"&gt;&lt;i data-feather="arrow-right"&gt;&lt;/i&gt;&lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/button&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;!-- Cod Box Copy end --&gt;
+                        .col-sm-12
+                            #owl-carousel-14.owl-carousel.owl-theme
+                              .item
+                                .card.crm-icon-box.text-center.crm-hover-primary
+                                  .card-body
+                                    i.icofont.icofont-ui-user.crm-dashboard-icon-primary
+                                    i.icofont.icofont-ui-user.crm-overlay
+                                    h6 User
+                              .item      
+                                .card.crm-icon-box.text-center.crm-hover-secondary
+                                  .card-body
+                                    i.icofont.icofont-social-google-map.crm-dashboard-icon-secondary
+                                    i.icofont.icofont-social-google-map.crm-overlay
+                                    h6 Map
+                              .item
+                                .card.crm-icon-box.text-center.crm-hover-success
+                                  .card-body
+                                    i.icofont.icofont-verification-check.crm-dashboard-icon-success
+                                    i.icofont.icofont-verification-check.crm-overlay
+                                    h6 Done
+                              .item
+                                .card.crm-icon-box.text-center.crm-hover-warning
+                                  .card-body
+                                    i.icofont.icofont-paper-plane.crm-dashboard-icon-warning
+                                    i.icofont.icofont-paper-plane.crm-overlay
+                                    h6 Delivery
+                              .item
+                                .card.crm-icon-box.text-center.crm-hover-info
+                                  .card-body
+                                    i.icofont.icofont-pie.crm-dashboard-icon-info
+                                    i.icofont.icofont-pie.crm-overlay
+                                    h6 Chart
+                              .item
+                                .card.crm-icon-box.text-center.crm-hover-primary
+                                  .card-body
+                                    i.icofont.icofont-chat.crm-dashboard-icon-primary
+                                    i.icofont.icofont-chat.crm-overlay
+                                    h6 Comment
+                              .item
+                                .card.crm-icon-box.text-center.crm-hover-secondary
+                                  .card-body
+                                    i.icofont.icofont-ebook.crm-dashboard-icon-secondary
+                                    i.icofont.icofont-ebook.crm-overlay
+                                    h6 Article
+                              .item
+                                .card.crm-icon-box.text-center.crm-hover-success
+                                  .card-body
+                                    i.icofont.icofont-repair.crm-dashboard-icon-success
+                                    i.icofont.icofont-repair.crm-overlay
+                                    h6 Support
+                        .col-xl-4.xl-100
+                          .card.crm-total-user-card
+                            .card-body
+                              .user-circle
+                                i.icofont.icofont-ui-user
+                              .total-user-title.d-flex
+                                h2.f-w-600 
+                                  span.counter 85.3
+                                  | k
+                                .setting-dot
+                                  .setting-bg.pull-right
+                                    i.fa.fa-spin.fa-cog
+                              h4.mb-0 Total Users
+                            .apex-chart-container
+                              #area-crm-chart
+                        .col-xl-4.col-lg-6.xl-50
+                          .card.crm-user-card
+                            .card-header
+                              .crm-user-top-content.text-center
+                                img.img-fluid.rounded-circle(src='../assets/images/user/2.jpg', alt='')
+                                h4 Alena Ketrol
+                                span.badge.flat-badge-secondary Our Md
+                            .card-body
+                              .row
+                                .col-6
+                                  .apex-chart-small
+                                    #area-crm-chart-small
+                                .col-6
+                                  h2.counter 216
+                                  h4 Deal Done
+                            .card-footer.p-0
+                              ul
+                                li
+                                  span Profile
+                                li
+                                  span Message        
+                        .col-xl-4.col-lg-6.xl-50
+                          .card.crm-total-user-card.done-project-card
+                            .card-body
+                              .user-circle
+                                i.icofont.icofont-rocket-alt-2
+                              .total-user-title.d-flex
+                                h2.f-w-600 
+                                  span.counter 160
+                                  | k
+                                .setting-dot
+                                  .setting-bg.pull-right
+                                    i.fa.fa-spin.fa-cog
+                              h4.mb-0 Done Project
+                            .apex-chart-container
+                              #area-crm-chart-1
+                        .col-sm-12
+                          .card.our-client-table
+                            .card-header
+                              h5 Our Client
+                              .dashboard-btn-groups
+                                .btn-group(role='group', aria-label='Basic example')
+                                  button.btn.btn-outline-light(type='button') Hours
+                                  button.btn.btn-outline-light(type='button') Day
+                                  button.btn.btn-outline-light(type='button') Week
+                                  button.btn.btn-outline-light.active(type='button') Month
+                              .card-header-right
+                                ul.list-unstyled.card-option
+                                  li
+                                    i.icofont.icofont-double-left
+                                  li
+                                    i.view-html.fa.fa-code
+                                  li
+                                    i.icofont.icofont-maximize.full-card
+                                  li
+                                    i.icofont.icofont-minus.minimize-card
+                                  li
+                                    i.icofont.icofont-refresh.reload-card
+                                  li
+                                    i.icofont.icofont-error.close-card
+                            .card-body.p-0
+                              .sales-product-table.table-responsive.crm-client-table
+                                table.table.table-bordernone
+                                  thead
+                                    tr
+                                      th(scope='col') Number
+                                      th(scope='col') Name
+                                      th(scope='col') Country
+                                      th(scope='col') Date
+                                      th(scope='col') Payment
+                                      th(scope='col') Total
+                                      th(scope='col') Status
+                                      th(colspan='2') Project Progress
+                                  tbody
+                                    tr
+                                      td 01
+                                      td
+                                        .d-inline-block.align-middle
+                                          img.img-radius.img-30.m-r-15.rounded-circle(src='../assets/images/user/2.png', alt='')
+                                          .d-inline-block
+                                            h6.f-w-600 Nick Stone
+                                      td
+                                        i.flag-icon.flag-icon-gb
+                                      td
+                                        span 10 May 2019
+                                      td
+                                        img.img-30(src='../assets/images/ecommerce/card.png', alt='')
+                                      td
+                                        span 8652.00
+                                          i(data-feather='dollar-sign')
+                                      td
+                                        span.status-position
+                                          i.fa.fa-circle.font-success 
+                                          | Success
+                                      td.project-progress
+                                        .progress.sm-progress-bar.progress-animate
+                                          .progress-gradient-success(role='progressbar', style='width: 100%', aria-valuenow='100', aria-valuemin='0', aria-valuemax='100')
+                                            span.animate-circle
+                                      td
+                                        i(data-feather='more-vertical')
+                                    tr
+                                      td 02
+                                      td
+                                        .d-inline-block.align-middle
+                                          img.img-radius.img-30.m-r-15.rounded-circle(src='../assets/images/user/5.jpg', alt='')
+                                          .d-inline-block
+                                            h6.f-w-600 Milano Esco
+                                      td
+                                        i.flag-icon.flag-icon-lr
+                                      td
+                                        span 10 May 2019
+                                      td
+                                        img.img-30(src='../assets/images/ecommerce/visa.png', alt='')
+                                      td
+                                        span 102.00
+                                          i(data-feather='dollar-sign')
+                                      td
+                                        span.status-position
+                                          i.fa.fa-circle.font-secondary 
+                                          | Bug Error
+                                      td.project-progress
+                                        .progress.sm-progress-bar.progress-animate
+                                          .progress-gradient-secondary(role='progressbar', style='width: 35%', aria-valuenow='35', aria-valuemin='0', aria-valuemax='100')
+                                            span.animate-circle
+                                      td
+                                        i(data-feather='more-vertical')
+                                    tr
+                                      td 03
+                                      td
+                                        .d-inline-block.align-middle
+                                          img.img-radius.img-30.m-r-15.rounded-circle(src='../assets/images/user/3.jpg', alt='')
+                                          .d-inline-block
+                                            h6.f-w-600 Wiltor Noice
+                                      td
+                                        i.flag-icon.flag-icon-za
+                                      td
+                                        span 10 May 2019
+                                      td
+                                        img.img-30(src='../assets/images/ecommerce/paypal.png', alt='')
+                                      td
+                                        span 2315.00
+                                          i(data-feather='dollar-sign')
+                                      td
+                                        span.status-position
+                                          i.fa.fa-circle.font-warning 
+                                          | Pending
+                                      td.project-progress
+                                        .progress.sm-progress-bar.progress-animate
+                                          .progress-gradient-warning(role='progressbar', style='width: 75%', aria-valuenow='75', aria-valuemin='0', aria-valuemax='100')
+                                            span.animate-circle
+                                      td
+                                        i(data-feather='more-vertical')
+                                    tr
+                                      td 04
+                                      td
+                                        .d-inline-block.align-middle
+                                          img.img-radius.img-30.m-r-15.rounded-circle(src='../assets/images/user/4.jpg', alt='')
+                                          .d-inline-block
+                                            h6.f-w-600 Anna Strong
+                                      td
+                                        i.flag-icon.flag-icon-ye
+                                      td
+                                        span 10 May 2019
+                                      td
+                                        img.img-30(src='../assets/images/ecommerce/mastercard.png', alt='')
+                                      td
+                                        span 4513.00
+                                          i(data-feather='dollar-sign')
+                                      td
+                                        span.status-position
+                                          i.fa.fa-circle.font-primary 
+                                          | Waiting
+                                      td.project-progress
+                                        .progress.sm-progress-bar.progress-animate
+                                          .progress-gradient-primary(role='progressbar', style='width: 60%', aria-valuenow='60', aria-valuemin='0', aria-valuemax='100')
+                                            span.animate-circle
+                                      td
+                                        i(data-feather='more-vertical')
+                              .code-box-copy
+                                button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head3', title='Copy')
+                                  i.icofont.icofont-copy-alt
+                                pre
+                                  code.language-html#example-head3
+                                      | &lt;!-- Cod Box Copy begin --&gt;
+                                      | &lt;div class="sales-product-table table-responsive crm-client-table"&gt;
+                                      | &lt;table class="table table-bordernone"&gt;
+                                      | &lt;thead&gt;
+                                      | &lt;tr&gt;
+                                      | &lt;th scope="col"&gt;Number&lt;/th&gt;
+                                      | &lt;th scope="col"&gt;Name&lt;/th&gt;
+                                      | &lt;th scope="col"&gt;Country&lt;/th&gt;
+                                      | &lt;th scope="col"&gt;Date&lt;/th&gt;
+                                      | &lt;th scope="col"&gt;Payment&lt;/th&gt;
+                                      | &lt;th scope="col"&gt;Total&lt;/th&gt;
+                                      | &lt;th scope="col"&gt;Status&lt;/th&gt;
+                                      | &lt;th scope="col"&gt;Project Progress&lt;/th&gt;
+                                      | &lt;/tr&gt;
+                                      | &lt;/thead&gt;
+                                      | &lt;tbody&gt;
+                                      | &lt;tr&gt;
+                                      | &lt;td&gt;01&lt;/td&gt;
+                                      | &lt;td&gt;
+                                      | &lt;div class="d-inline-block align-middle"&gt;&lt;img class="img-radius img-30 m-r-15 rounded-circle" src="../assets/images/user/2.png" alt=""&gt;
+                                      | &lt;div class="d-inline-block"&gt;
+                                      | &lt;h6 class="f-w-600"&gt;Nick Stone&lt;/h6&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/td&gt;
+                                      | &lt;td&gt;&lt;i class="flag-icon flag-icon-gb"&gt;&lt;/i&gt;&lt;/td&gt;
+                                      | &lt;td&gt;&lt;span&gt;10 May 2019&lt;/span&gt;&lt;/td&gt;
+                                      | &lt;td&gt;&lt;img class="img-30" src="../assets/images/ecommerce/card.png" alt=""&gt;&lt;/td&gt;
+                                      | &lt;td&gt;&lt;span&gt;8652.00&lt;i data-feather="dollar-sign"&gt;&lt;/i&gt;&lt;/span&gt;&lt;/td&gt;
+                                      | &lt;td&gt;&lt;span class="status-position"&gt;&lt;i class="fa fa-circle font-success"&gt; &lt;/i&gt;Success&lt;/span&gt;&lt;/td&gt;
+                                      | &lt;td class="project-progress"&gt;
+                                      | &lt;div class="progress sm-progress-bar progress-animate"&gt;| &lt;div class="progress-gradient-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"&gt;&lt;span class="animate-circle"&gt;&lt;/span&gt;&lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/td&gt;
+                                      | &lt;td&gt;&lt;i data-feather="more-vertical"&gt;&lt;/i&gt;&lt;/td&gt;
+                                      | &lt;/tr&gt;
+                                      | &lt;tr&gt;
+                                      | &lt;td&gt;02&lt;/td&gt;
+                                      | &lt;td&gt;
+                                      | &lt;div class="d-inline-block align-middle"&gt;&lt;img class="img-radius img-30 m-r-15 rounded-circle" src="../assets/images/user/5.jpg" alt=""&gt;
+                                      | &lt;div class="d-inline-block"&gt;
+                                      | &lt;h6 class="f-w-600"&gt;Milano Esco&lt;/h6&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/td&gt;
+                                      | &lt;td&gt;&lt;i class="flag-icon flag-icon-lr"&gt;&lt;/i&gt;&lt;/td&gt;
+                                      | &lt;td&gt;&lt;span&gt;10 May 2019&lt;/span&gt;&lt;/td&gt;
+                                      | &lt;td&gt;&lt;img class="img-30" src="../assets/images/ecommerce/visa.png" alt=""&gt;&lt;/td&gt;
+                                      | &lt;td&gt;&lt;span&gt;102.00&lt;i data-feather="dollar-sign"&gt;&lt;/i&gt;&lt;/span&gt;&lt;/td&gt;
+                                      | &lt;td&gt;&lt;span class="status-position"&gt;&lt;i class="fa fa-circle font-secondary"&gt; &lt;/i&gt;Bug Error&lt;/span&gt;&lt;/td&gt;
+                                      | &lt;td class="project-progress"&gt;
+                                      | &lt;div class="progress sm-progress-bar progress-animate"&gt;
+                                      | &lt;div class="progress-gradient-secondary" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"&gt;&lt;span class="animate-circle"&gt;&lt;/span&gt;&lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/td&gt;
+                                      | &lt;td&gt;&lt;i data-feather="more-vertical"&gt;&lt;/i&gt;&lt;/td&gt;
+                                      | &lt;/tr&gt;
+                                      | &lt;tr&gt;
+                                      | &lt;td&gt;03&lt;/td&gt;
+                                      | &lt;td&gt;
+                                      | &lt;div class="d-inline-block align-middle"&gt;&lt;img class="img-radius img-30 m-r-15 rounded-circle" src="../assets/images/user/3.jpg" alt=""&gt;
+                                      | &lt;div class="d-inline-block"&gt;
+                                      | &lt;h6 class="f-w-600"&gt;Wiltor Noice&lt;/h6&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/td&gt;
+                                      | &lt;td&gt;&lt;i class="flag-icon flag-icon-za"&gt;&lt;/i&gt;&lt;/td&gt;
+                                      | &lt;td&gt;&lt;span&gt;10 May 2019&lt;/span&gt;&lt;/td&gt;
+                                      | &lt;td&gt;&lt;img class="img-30" src="../assets/images/ecommerce/paypal.png" alt=""&gt;&lt;/td&gt;
+                                      | &lt;td&gt;&lt;span&gt;2315.00&lt;i data-feather="dollar-sign"&gt;&lt;/i&gt;&lt;/span&gt;&lt;/td&gt;
+                                      | &lt;td&gt;&lt;span class="status-position"&gt;&lt;i class="fa fa-circle font-warning"&gt; &lt;/i&gt;Pending&lt;/span&gt;&lt;/td&gt;
+                                      | &lt;td class="project-progress"&gt;
+                                      | &lt;div class="progress sm-progress-bar progress-animate"&gt;
+                                      | &lt;div class="progress-gradient-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"&gt;&lt;span class="animate-circle"&gt;&lt;/span&gt;&lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/td&gt;
+                                      | &lt;td&gt;&lt;i data-feather="more-vertical"&gt;&lt;/i&gt;&lt;/td&gt;
+                                      | &lt;/tr&gt;
+                                      | &lt;tr&gt;
+                                      | &lt;td&gt;04&lt;/td&gt;
+                                      | &lt;td&gt;
+                                      | &lt;div class="d-inline-block align-middle"&gt;&lt;img class="img-radius img-30 m-r-15 rounded-circle" src="../assets/images/user/4.jpg" alt=""&gt;
+                                      | &lt;div class="d-inline-block"&gt;
+                                      | &lt;h6 class="f-w-600"&gt;Anna Strong&lt;/h6&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/td&gt;
+                                      | &lt;td&gt;&lt;i class="flag-icon flag-icon-ye"&gt;&lt;/i&gt;&lt;/td&gt;
+                                      | &lt;td&gt;&lt;span&gt;10 May 2019&lt;/span&gt;&lt;/td&gt;
+                                      | &lt;td&gt;&lt;img class="img-30" src="../assets/images/ecommerce/mastercard.png" alt=""&gt;&lt;/td&gt;
+                                      | &lt;td&gt;&lt;span&gt;4513.00&lt;i data-feather="dollar-sign"&gt;&lt;/i&gt;&lt;/span&gt;&lt;/td&gt;
+                                      | &lt;td&gt;&lt;span class="status-position"&gt;&lt;i class="fa fa-circle font-primary"&gt; &lt;/i&gt;Waiting&lt;/span&gt;&lt;/td&gt;
+                                      | &lt;td class="project-progress"&gt;
+                                      | &lt;div class="progress sm-progress-bar progress-animate"&gt;
+                                      | &lt;div class="progress-gradient-primary" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"&gt;&lt;span class="animate-circle"&gt;&lt;/span&gt;&lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/td&gt;
+                                      | &lt;td&gt;&lt;i data-feather="more-vertical"&gt;&lt;/i&gt;&lt;/td&gt;
+                                      | &lt;/tr&gt;
+                                      | &lt;/tbody&gt;
+                                      | &lt;/table&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;!-- Cod Box Copy end --&gt;              
+                        .col-lg-6
+                          .card
+                            .card-header
+                              h5 Project Income
+                              .card-header-right
+                                ul.list-unstyled.card-option
+                                  li
+                                    i.icofont.icofont-double-left
+                                  li
+                                    i.view-html.fa.fa-code
+                                  li
+                                    i.icofont.icofont-maximize.full-card
+                                  li
+                                    i.icofont.icofont-minus.minimize-card
+                                  li
+                                    i.icofont.icofont-refresh.reload-card
+                                  li
+                                    i.icofont.icofont-error.close-card
+                            .card-body.crm-dashboard-chart
+                              .crm-top-chart
+                                h1.font-info.mb-0.counter 32
+                                span Total Income
+                                span.d-block.f-12
+                                  span.d-inline-block.up-icon-middle
+                                    i.fa.fa-sort-up.mr-1.font-info 
+                                  | 100%
+                              canvas#incomechart
+                              .code-box-copy
+                                button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head4', title='Copy')
+                                  i.icofont.icofont-copy-alt
+                                pre
+                                  code.language-html#example-head4
+                                      | &lt;!-- Cod Box Copy begin --&gt;
+                                      | &lt;div class="card-body crm-dashboard-chart"&gt;
+                                      | &lt;div class="crm-top-chart"&gt;
+                                      | &lt;h1 class="font-info mb-0"&gt;32&lt;/h1&gt;&lt;span&gt;Total Income&lt;/span&gt;&lt;span class="d-block f-12"&gt;
+                                      | &lt;div class="d-inline-block up-icon-middle"&gt;&lt;i class="fa fa-sort-up mr-1 font-info"&gt; &lt;/i&gt;&lt;/div&gt;100%&lt;/span&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;canvas id="incomechart"&gt;&lt;/canvas&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;!-- Cod Box Copy end --&gt;
+                        .col-lg-6
+                          .card
+                            .card-header
+                              h5 New Project
+                              .card-header-right
+                                ul.list-unstyled.card-option
+                                  li
+                                    i.icofont.icofont-double-left
+                                  li
+                                    i.view-html.fa.fa-code
+                                  li
+                                    i.icofont.icofont-maximize.full-card
+                                  li
+                                    i.icofont.icofont-minus.minimize-card
+                                  li
+                                    i.icofont.icofont-refresh.reload-card
+                                  li
+                                    i.icofont.icofont-error.close-card
+                            .card-body.crm-dashboard-chart
+                              .crm-top-chart
+                                h1.font-secondary.mb-0.counter 26
+                                span Total New Project
+                                span.d-block.f-12
+                                  span.d-inline-block.up-icon-middle
+                                    i.fa.fa-sort-up.mr-1.font-secondary 
+                                  | 100%
+                              canvas#new-project
+                              .code-box-copy
+                                button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head5', title='Copy')
+                                  i.icofont.icofont-copy-alt
+                                pre
+                                  code.language-html#example-head5
+                                      | &lt;!-- Cod Box Copy begin --&gt;
+                                      | &lt;div class="card-body crm-dashboard-chart"&gt;
+                                      | &lt;div class="crm-top-chart"&gt;
+                                      | &lt;h1 class="font-secondary mb-0"&gt;26&lt;/h1&gt;&lt;span&gt;Total New Project&lt;/span&gt;&lt;span class="d-block f-12"&gt;
+                                      | &lt;div class="d-inline-block up-icon-middle"&gt;&lt;i class="fa fa-sort-up mr-1 font-info"&gt; &lt;/i&gt;&lt;/div&gt;100%&lt;/span&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;canvas id="new-project"&gt;&lt;/canvas&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;!-- Cod Box Copy end --&gt;
+                        .col-xl-8.xl-100.box-col-12
+                          .card
+                            .card-header
+                              h5 Quick Mail
+                              .card-header-right
+                                ul.list-unstyled.card-option
+                                  li
+                                    i.icofont.icofont-double-left
+                                  li
+                                    i.view-html.fa.fa-code
+                                  li
+                                    i.icofont.icofont-maximize.full-card
+                                  li
+                                    i.icofont.icofont-minus.minimize-card
+                                  li
+                                    i.icofont.icofont-refresh.reload-card
+                                  li
+                                    i.icofont.icofont-error.close-card
+                            .card-body
+                              .quick-mail
+                                .row
+                                  .col
+                                    .form-group
+                                      input.form-control.btn-pill(type='email', placeholder='To')
+                                .row
+                                  .col-sm-6
+                                    .form-group.mb-0
+                                      input.form-control.btn-pill(type='email', placeholder='Cc')
+                                  .col-sm-6.xs-input-space
+                                    .form-group.mb-0
+                                      input.form-control.btn-pill(type='email', placeholder='Subject')
+                              .code-box-copy
+                                button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head6', title='Copy')
+                                  i.icofont.icofont-copy-alt
+                                pre
+                                  code.language-html#example-head6
+                                      | &lt;!-- Cod Box Copy begin --&gt;
+                                      | &lt;div class="card-body"&gt;
+                                      | &lt;div class="quick-mail"&gt;
+                                      | &lt;div class="row"&gt;
+                                      | &lt;div class="col"&gt;
+                                      | &lt;div class="form-group"&gt;
+                                      | &lt;input class="form-control btn-pill" type="email" placeholder="To"&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;div class="row"&gt;
+                                      | &lt;div class="col-sm-6"&gt;
+                                      | &lt;div class="form-group"&gt;
+                                      | &lt;input class="form-control btn-pill" type="email" placeholder="Cc"&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;div class="col-sm-6"&gt;
+                                      | &lt;div class="form-group"&gt;
+                                      | &lt;input class="form-control btn-pill" type="email" placeholder="Subject"&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;textarea class="crm-editor" id="editor1" name="editor1" cols="30" rows="10"&gt;&lt;span&gt;Hello,&lt;/span&gt;
+                                      | &lt;p&gt;Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy&lt;/p&gt;&lt;/textarea&gt;
+                                      | &lt;div class="card-footer quick-mail-footer"&gt;
+                                      | &lt;button class="btn btn-secondary btn-pill"&gt;Send&lt;/button&gt;
+                                      | &lt;button class="btn btn-clip"&gt;&lt;i data-feather="paperclip"&gt;&lt;/i&gt;&lt;/button&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;!-- Cod Box Copy end --&gt;          
+                            textarea#editor1.crm-editor(name='editor1', cols='30', rows='10')
+                              | <span>Hello,</span>
+                              | <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
+                            .card-footer.quick-mail-footer
+                              button.btn.btn-secondary.btn-pill Send      
+                              button.btn.btn-clip
+                                i(data-feather='paperclip')      
+                        .col-xl-4.xl-50.box-col-6
+                          .card.crm-user-profile-card
+                            .card-header.p-0.profile-top-bg
+                              .profile-round.profile-round-big.animation-round-1
+                              .profile-round.profile-round-medium.animation-round-2 
+                              .profile-round.profile-round-big.animation-round-3
+                              .profile-round.profile-round-small.animation-round-4
+                              .profile-round.profile-round-semi-small.animation-round-5
+                              .profile-round.profile-round-small.animation-round-6
+                              .profile-details
+                                .media
+                                  img.img-90.rounded-circle(src='../assets/images/user/11.jpg', alt='')
+                                  .media-body
+                                    h5 Alex Goldmine
+                                    span.f-12.d-block Alexgoldmine_98@gmail.com
+                                    span.badge.badge-pill.bg-white.font-info Admin
+                            .card-body
+                              ul
+                                li
+                                  h6 
+                                    i(data-feather='user')
+                                    | Your Account
+                                li
+                                  h6 
+                                    i(data-feather='credit-card')
+                                    | Invoices & Payments
+                                    span.pull-right.badge.badge-pill.pill-badge-secondary 2
+                                li
+                                  h6 
+                                    i(data-feather='settings')
+                                    | Setting
+                                li
+                                  h6 
+                                    i(data-feather='file-text')
+                                    | Your Services
+                                li
+                                  h6 
+                                    i(data-feather='log-out')
+                                    | Log Out
+                        .col-xl-4.xl-50.box-col-6
+                          .card
+                            .card-header
+                              h5 My task
+                              .card-header-right
+                                ul.list-unstyled.card-option
+                                  li
+                                    i.icofont.icofont-double-left
+                                  li
+                                    i.view-html.fa.fa-code
+                                  li
+                                    i.icofont.icofont-maximize.full-card
+                                  li
+                                    i.icofont.icofont-minus.minimize-card
+                                  li
+                                    i.icofont.icofont-refresh.reload-card
+                                  li
+                                    i.icofont.icofont-error.close-card
+                            .card-body.p-0
+                              .my-tasks
+                                .media
+                                  .checkbox.checkbox-square-primary
+                                      input#checkbox1(type='checkbox')
+                                      label(for='checkbox1')
+                                  .media-body
+                                    h6.mb-0.f-w-600 James Anderson
+                                    p Lorem Ipsum is simply dummy text of the printing and type.
+                                    span.badge.badge-pill.badge-primary Done
+                                .media
+                                  .checkbox.checkbox-square-success
+                                      input#checkbox2(type='checkbox')
+                                      label(for='checkbox2')
+                                  .media-body
+                                    h6.mb-0.f-w-600 Michael Jorden
+                                    p Lorem Ipsum is simply dummy text of the printing and type setting.
+                                    span.badge.badge-pill.badge-success Done
+                                .media
+                                  .checkbox.checkbox-square-warning
+                                      input#checkbox3(type='checkbox')
+                                      label(for='checkbox3')
+                                  .media-body
+                                    h6.mb-0.f-w-600 Johnathan Doeting
+                                    p Lorem Ipsum is simply dummy text of the printing and.
+                                    span.badge.badge-pill.badge-warning Pending
+                                .media
+                                  .checkbox.checkbox-square-secondary
+                                      input#checkbox4(type='checkbox', checked='')
+                                      label(for='checkbox4')
+                                  .media-body
+                                    h6.mb-0.f-w-600 James Anderson
+                                    p Lorem Ipsum is simply dummy text of the printing and.
+                                    span.badge.badge-pill.badge-secondary Failed
+                              .code-box-copy
+                                button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head7', title='Copy')
+                                  i.icofont.icofont-copy-alt
+                                pre
+                                  code.language-html#example-head7
+                                      | &lt;!-- Cod Box Copy begin --&gt;
+                                      | &lt;div class="my-tasks"&gt;
+                                      | &lt;div class="media"&gt;
+                                      | &lt;div class="checkbox checkbox-square-primary"&gt;
+                                      | &lt;input id="checkbox1" type="checkbox"&gt;
+                                      | &lt;label for="checkbox1"&gt;&lt;/label&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;div class="media-body"&gt;
+                                      | &lt;h6 class="mb-0 f-w-600"&gt;James Anderson&lt;/h6&gt;
+                                      | &lt;p&gt;Lorem Ipsum is simply dummy text of the printing and type.&lt;/p&gt;&lt;span class="badge badge-pill badge-primary"&gt;Done&lt;/span&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;div class="media"&gt;
+                                      | &lt;div class="checkbox checkbox-square-success"&gt;
+                                      | &lt;input id="checkbox2" type="checkbox"&gt;
+                                      | &lt;label for="checkbox2"&gt;&lt;/label&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;div class="media-body"&gt;
+                                      | &lt;h6 class="mb-0 f-w-600"&gt;Michael Jorden&lt;/h6&gt;
+                                      | &lt;p&gt;Lorem Ipsum is simply dummy text of the printing and type setting.&lt;/p&gt;&lt;span class="badge badge-pill badge-success"&gt;Done&lt;/span&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;div class="media"&gt;
+                                      | &lt;div class="checkbox checkbox-square-warning"&gt;
+                                      | &lt;input id="checkbox3" type="checkbox"&gt;
+                                      | &lt;label for="checkbox3"&gt;&lt;/label&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;div class="media-body"&gt;
+                                      | &lt;h6 class="mb-0 f-w-600"&gt;Johnathan Doeting&lt;/h6&gt;
+                                      | &lt;p&gt;Lorem Ipsum is simply dummy text of the printing and.&lt;/p&gt;&lt;span class="badge badge-pill badge-warning"&gt;Pending&lt;/span&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;div class="media"&gt;
+                                      | &lt;div class="checkbox checkbox-square-secondary"&gt;
+                                      | &lt;input id="checkbox4" type="checkbox" checked=""&gt;
+                                      | &lt;label for="checkbox4"&gt;&lt;/label&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;div class="media-body"&gt;
+                                      | &lt;h6 class="mb-0 f-w-600"&gt;James Anderson&lt;/h6&gt;
+                                      | &lt;p&gt;Lorem Ipsum is simply dummy text of the printing and.&lt;/p&gt;&lt;span class="badge badge-pill badge-secondary"&gt;Failed&lt;/span&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;!-- Cod Box Copy end --&gt;
+                        .col-xl-4.xl-50.box-col-6
+                          .card
+                            .card-header
+                              h5 Chat
+                              .crm-chat-status
+                                .circle-dashed-box
+                                  .circle-dashed
+                                    i.fa.fa-plus
+                                img.img-30.rounded-circle(src='../assets/images/user/2.jpg', alt='')
+                                img.img-30.rounded-circle.mr-0(src='../assets/images/user/12.jpg', alt='')
+                              .card-header-right
+                                ul.list-unstyled.card-option
+                                  li
+                                    i.icofont.icofont-double-left
+                                  li
+                                    i.view-html.fa.fa-code
+                                  li
+                                    i.icofont.icofont-maximize.full-card
+                                  li
+                                    i.icofont.icofont-minus.minimize-card
+                                  li
+                                    i.icofont.icofont-refresh.reload-card
+                                  li
+                                    i.icofont.icofont-error.close-card
+                            .card-body.chat-box.crm-chat
+                              .chat
+                                .media.left-side-chat
+                                  img.rounded-circle.chat-user-img.img-60.m-r-20(src='../assets/images/user/12.jpg', alt='')
+                                  .media-body
+                                    span.f-12 Message seen 4:07 PM
+                                    .message-main
+                                      p.mb-0.f-12 Lorem  Ipsum is  simply  dummy text  of the printing and typesetting.
+                                .media.right-side-chat
+                                  .media-body.text-right
+                                    span.f-12.d-block Message seen 4:10 PM
+                                    .message-main.pull-right
+                                      p.mb-0.text-left
+                                        | Lorem  Ipsum is  simply  dummy text  of the printing.
+                                      .clearfix
+                                  img.rounded-circle.chat-user-img.img-60.m-l-20(src='../assets/images/user/2.jpg', alt='')
+                                .media.left-side-chat
+                                  img.rounded-circle.chat-user-img.img-60.m-r-20(src='../assets/images/user/12.jpg', alt='')
+                                  .media-body
+                                    span.f-12 Message seen 4:15 PM
+                                    .message-main
+                                      p Lorem  Ipsum is  simply  dummy.
+                              .code-box-copy
+                                button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head8', title='Copy')
+                                  i.icofont.icofont-copy-alt
+                                pre
+                                  code.language-html#example-head8
+                                      | &lt;!-- Cod Box Copy begin --&gt;
+                                      | &lt;div class="card-body chat-box crm-chat"&gt;
+                                      | &lt;div class="chat"&gt;
+                                      | &lt;div class="media left-side-chat"&gt;&lt;img class="rounded-circle chat-user-img img-60 m-r-20" src="../assets/images/user/12.jpg" alt=""&gt;
+                                      | &lt;div class="media-body"&gt;&lt;span class="f-12"&gt;Message seen 4:07 PM&lt;/span&gt;
+                                      | &lt;div class="message-main"&gt;
+                                      | &lt;p class="mb-0 f-12"&gt;Lorem  Ipsum is  simply  dummy text  of the printing and typesetting.&lt;/p&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;div class="media right-side-chat"&gt;
+                                      | &lt;div class="media-body text-right"&gt;&lt;span class="f-12 d-block"&gt;Message seen 4:10 PM&lt;/span&gt;
+                                      | &lt;div class="message-main pull-right"&gt;
+                                      | &lt;p class="mb-0 text-left"&gt;Lorem  Ipsum is  simply  dummy text  of the printing and typesetting industry.&lt;/p&gt;
+                                      | &lt;div class="clearfix"&gt;&lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/div&gt;&lt;img class="rounded-circle chat-user-img img-60 m-l-20" src="../assets/images/user/2.jpg" alt=""&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;div class="media left-side-chat"&gt;&lt;img class="rounded-circle chat-user-img img-60 m-r-20" src="../assets/images/user/12.jpg" alt=""&gt;
+                                      | &lt;div class="media-body"&gt;&lt;span class="f-12"&gt;Message seen 4:15 PM&lt;/span&gt;
+                                      | &lt;div class="message-main"&gt;
+                                      | &lt;p&gt;Lorem  Ipsum is  simply  dummy.&lt;/p&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;!-- Cod Box Copy end --&gt;
+                        .col-xl-4.xl-50.box-col-6
+                          .card
+                            .card-header
+                              h5 Recent Activities
+                              .card-header-right
+                                ul.list-unstyled.card-option
+                                  li
+                                    i.icofont.icofont-double-left
+                                  li
+                                    i.view-html.fa.fa-code
+                                  li
+                                    i.icofont.icofont-maximize.full-card
+                                  li
+                                    i.icofont.icofont-minus.minimize-card
+                                  li
+                                    i.icofont.icofont-refresh.reload-card
+                                  li
+                                    i.icofont.icofont-error.close-card
+                            .card-body
+                              .timeline-circle
+                                .media
+                                  span.f-12 11:20
+                                  .timeline-background
+                                    .timeline-dot-success
+                                    .timeline-line 
+                                  .media-body
+                                    h6.mb-0 Updated Product
+                                    p.f-12 Quisque a consequat ante, at volutpat enim.
+                                .media
+                                  span.f-12 Today
+                                  .timeline-background
+                                    .timeline-dot-primary
+                                    .timeline-line  
+                                  .media-body
+                                    h6.mb-0 You liked James products
+                                    p.f-12 Aenean sit amet magna vel magna fringilla ferme.
+                                .media
+                                  span.f-12 05:04
+                                  .timeline-background
+                                    .timeline-dot-warning
+                                    .timeline-line
+                                  .media-body
+                                    h6.mb-0 James just like your product
+                                    p.f-12 Nam posuere accumsan porta.
+                                .media
+                                  span.f-12 08:20
+                                  .timeline-background
+                                    .timeline-dot-secondary
+                                    .timeline-line
+                                  .media-body
+                                    h6.mb-0 Jenna commented on your product
+                                    p.f-12 Curabitur egestas consequat lorem.
+                                .media
+                                  span.f-12 Last Week
+                                  .timeline-background
+                                    .timeline-dot-info
+                                    .timeline-line
+                                  .media-body
+                                    h6.mb-0 Jihan Doe just like your product
+                                    p.f-12 Vestibulum nec mi suscipit, dapibus purus a    
+                              .code-box-copy
+                                button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head9', title='Copy')
+                                  i.icofont.icofont-copy-alt
+                                pre
+                                  code.language-html#example-head9
+                                      | &lt;!-- Cod Box Copy begin --&gt;
+                                      | &lt;div class="card-body chat-box crm-chat"&gt;
+                                      | &lt;div class="chat"&gt;
+                                      | &lt;div class="media left-side-chat"&gt;&lt;img class="rounded-circle chat-user-img img-60 m-r-20" src="../assets/images/user/12.jpg" alt=""&gt;
+                                      | &lt;div class="media-body"&gt;&lt;span class="f-12"&gt;Message seen 4:07 PM&lt;/span&gt;
+                                      | &lt;div class="message-main"&gt;
+                                      | &lt;p class="mb-0 f-12"&gt;Lorem  Ipsum is  simply  dummy text  of the printing and typesetting.&lt;/p&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;div class="media right-side-chat"&gt;
+                                      | &lt;div class="media-body text-right"&gt;&lt;span class="f-12"&gt;Message seen 4:10 PM&lt;/span&gt;
+                                      | &lt;div class="message-main pull-right"&gt;
+                                      | &lt;p class="mb-0 text-left"&gt;Lorem  Ipsum is  simply  dummy text  of the printing and typesetting industry.&lt;/p&gt;
+                                      | &lt;div class="clearfix"&gt;&lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/div&gt;&lt;img class="rounded-circle chat-user-img img-60 m-l-20" src="../assets/images/user/2.jpg" alt=""&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;div class="media left-side-chat"&gt;&lt;img class="rounded-circle chat-user-img img-60 m-r-20" src="../assets/images/user/12.jpg" alt=""&gt;
+                                      | &lt;div class="media-body"&gt;&lt;span class="f-12"&gt;Message seen 4:15 PM&lt;/span&gt;
+                                      | &lt;div class="message-main"&gt;
+                                      | &lt;p&gt;Lorem  Ipsum is  simply  dummy.&lt;/p&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;!-- Cod Box Copy end --&gt;
+                    // Container-fluid Ends 
+                include ../../components/footer
+        include ../../components/footer-files

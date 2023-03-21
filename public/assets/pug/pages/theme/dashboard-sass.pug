@@ -1,0 +1,583 @@
+- var prism                 = true;
+- var apex                  = true;
+- var chartist              = true;
+- var clipboard             = true;
+- var customcard            = true;
+- var chat_menu             = true;
+- var theme_customizer      = true;
+- var tooltip               = true;
+- var dashboard_sass        = true;
+- var counter               = true;
+- var vector_map            = true;
+
+doctype html
+html(lang='en')
+    include ../../components/header-files
+    body
+        include ../../components/loader
+        // page-wrapper Start
+        .page-wrapper
+            include ../../components/header
+            // Page Body Start
+            .page-body-wrapper
+                include ../../components/sidebar
+                include ../../components/chat-sidebar
+                .page-body
+                    .container-fluid
+                        .page-header
+                            .row
+                                .col-lg-6
+                                    h3
+                                      | Sass
+                                    ol.breadcrumb
+                                      li.breadcrumb-item
+                                        a(href='index.html')
+                                         | Home
+                                      li.breadcrumb-item Dashboard
+                                      li.breadcrumb-item.active Sass
+                                .col-lg-6
+                                  include ../../components/bookmark
+                    // Container-fluid starts
+                    .container-fluid
+                      .row.sass-top-cards
+                        .col
+                              .card.sass-widgets.o-hidden
+                                .card-body.p-0
+                                  .media
+                                    .media-body
+                                      p.f-w-600 Total Visitors
+                                      h2.f-w-600.mb-0 80,00,566
+                                    .setting-dot.d-inline-block
+                                      .setting-bg.setting-bg-primary
+                                        i.fa.fa-spin.fa-cog.font-primary
+                                  .bg-gradient-primary.footer-shape
+                                    .sass-footer
+                                      p.mb-0.d-inline-block.mr-3 80,000
+                                      span
+                                        span.d-inline-block
+                                          i.fa.fa-sort-up.mr-4
+                                      p.mb-0.d-inline-block.b-l-primary.pl-4.mr-3 566
+                                      span.down-arrow-align
+                                        span.d-inline-block
+                                          i.fa.fa-sort-down
+                                      .small-sass
+                                        .small-sasschart.flot-chart-container
+                        .col
+                              .card.sass-widgets.o-hidden
+                                .card-body.p-0
+                                  .media
+                                    .media-body
+                                      p.f-w-600 Total Customers
+                                      h2.f-w-600.mb-0 60,02,52
+                                    .setting-dot.d-inline-block
+                                      .setting-bg.setting-bg-secondary
+                                        i.fa.fa-spin.fa-cog.font-secondary
+                                  .bg-gradient-secondary.footer-shape
+                                    .sass-footer
+                                      p.mb-0.d-inline-block.mr-3 60,000
+                                      span
+                                        span.d-inline-block
+                                          i.fa.fa-sort-up.mr-4
+                                      p.mb-0.d-inline-block.b-l-secondary.pl-4.mr-3 252
+                                      span.down-arrow-align
+                                        span.d-inline-block
+                                          i.fa.fa-sort-down
+                                      .small-sass
+                                        .small-sasschart-1.flot-chart-container
+                        .col
+                              .card.sass-widgets.o-hidden
+                                .card-body.p-0
+                                  .media
+                                    .media-body
+                                      p.f-w-600 Total Orders
+                                      h2.f-w-600.mb-0 89,000
+                                    .setting-dot.d-inline-block
+                                      .setting-bg.setting-bg-info
+                                        i.fa.fa-spin.fa-cog.font-info
+                                  .bg-gradient-info.footer-shape
+                                    .sass-footer
+                                      p.mb-0.d-inline-block.mr-3 88,640
+                                      span
+                                        span.d-inline-block
+                                          i.fa.fa-sort-up.mr-4
+                                      p.mb-0.d-inline-block.b-l-info.pl-4.mr-3 360
+                                      span.down-arrow-align
+                                        span.d-inline-block
+                                          i.fa.fa-sort-down
+                                      .small-sass
+                                        .small-sasschart-2.flot-chart-container
+                        .col
+                              .card.sass-widgets.o-hidden
+                                .card-body.p-0
+                                  .media
+                                    .media-body
+                                      p.f-w-600 Total Revenue
+                                      h2.f-w-600.mb-0 45,01,046
+                                    .setting-dot.d-inline-block
+                                      .setting-bg.setting-bg-warning
+                                        i.fa.fa-spin.fa-cog.font-warning
+                                  .bg-gradient-warning.footer-shape
+                                    .sass-footer
+                                      p.mb-0.d-inline-block.mr-3 40,00,00
+                                      span
+                                        span.d-inline-block
+                                          i.fa.fa-sort-up.mr-4
+                                      p.mb-0.d-inline-block.b-l-warning.pl-4.mr-3 215
+                                      span.down-arrow-align
+                                        span.d-inline-block
+                                          i.fa.fa-sort-down
+                                      .small-sass
+                                        .small-sasschart-3.flot-chart-container
+                        .col
+                              .card.sass-widgets.o-hidden
+                                .card-body.p-0
+                                  .media
+                                    .media-body
+                                      p.f-w-600 Total Shipment
+                                      h2.f-w-600.mb-0 50,000
+                                    .setting-dot.d-inline-block
+                                      .setting-bg.setting-bg-success
+                                        i.fa.fa-spin.fa-cog.font-success
+                                  .bg-gradient-success.footer-shape
+                                    .sass-footer
+                                      p.mb-0.d-inline-block.mr-3 40,000
+                                      span
+                                        span.d-inline-block
+                                          i.fa.fa-sort-up.mr-4
+                                      p.mb-0.d-inline-block.b-l-success.pl-4.mr-3 215
+                                      span.down-arrow-align
+                                        span.d-inline-block
+                                          i.fa.fa-sort-down
+                                      .small-sass
+                                        .small-sasschart-4.flot-chart-container
+                        
+                        .col-xl-4.xl-100.box-col-6
+                          .card
+                            .card-header
+                              h5 Over View
+                              .card-header-right
+                                ul.list-unstyled.card-option
+                                  li
+                                    i.icofont.icofont-double-left
+                                  li
+                                    i.view-html.fa.fa-code
+                                  li
+                                    i.icofont.icofont-maximize.full-card
+                                  li
+                                    i.icofont.icofont-minus.minimize-card
+                                  li
+                                    i.icofont.icofont-refresh.reload-card
+                                  li
+                                    i.icofont.icofont-error.close-card
+                            .card-body.overview-sass
+                              .row
+                                .col-sm-6
+                                  .card.overview-color
+                                    .card-body.bg-gradient-danger.text-center
+                                      h4 30+
+                                      .btn.btn-pill.btn-sm.f-12
+                                        | Total Deals
+                                      img.img-fluid.img-80(src='../assets/images/dashboard-sass/handshake.png', alt='')
+                                .col-sm-6
+                                  .card.overview-color
+                                    .card-body.bg-gradient-primary.text-center
+                                      h4 $1800
+                                      .btn.btn-pill.btn-sm.f-12
+                                        | Today Earning
+                                      img.img-fluid.img-60(src='../assets/images/dashboard-sass/graph.png', alt='')
+                                .col-sm-12
+                                  .progress-sass
+                                    .sass-overview
+                                      span.f-w-600 Meeting : 85%
+                                      span.pull-right.f-w-600 85 / 
+                                        span.over-color 100
+                                      .progress-gradient-fill
+                                        .progress.sm-progress-bar.progress-animate
+                                          .progress-gradient-danger(role='progressbar', style='width: 85%', aria-valuenow='85', aria-valuemin='0', aria-valuemax='100')
+                                            span.animate-circle
+                                    .sass-overview
+                                      span.f-w-600 Deals : 60%
+                                      span.pull-right.f-w-600 60 / 
+                                        span.over-color 100
+                                      .progress-gradient-fill
+                                        .progress.sm-progress-bar.progress-animate
+                                          .progress-gradient-danger(role='progressbar', style='width: 60%', aria-valuenow='60', aria-valuemin='0', aria-valuemax='100')
+                                            span.animate-circle
+                                    .sass-overview
+                                      span.f-w-600 Order Value : 30%
+                                      span.pull-right.f-w-600 30 / 
+                                        span.over-color 100
+                                      .progress-gradient-fill
+                                        .progress.sm-progress-bar.progress-animate
+                                          .progress-gradient-danger(role='progressbar', style='width: 30%', aria-valuenow='30', aria-valuemin='0', aria-valuemax='100')
+                                            span.animate-circle
+                              .code-box-copy
+                                button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head1', title='Copy')
+                                  i.icofont.icofont-copy-alt
+                                pre
+                                  code.language-html#example-head1
+                                      | &lt;!-- Cod Box Copy begin --&gt;
+                                      | &lt;div class="card-body overview-sass"&gt;
+                                      |   &lt;div class="row"&gt;
+                                      |     &lt;div class="col-6"&gt;
+                                      |       &lt;div class="card overview-color"&gt;
+                                      |         &lt;div class="card-body bg-gradient-danger text-center"&gt;
+                                      |           &lt;h4&gt;30+&lt;/h4&gt;
+                                      |           &lt;div class="btn btn-pill btn-sm f-12"&gt;Total Deals&lt;/div&gt;&lt;img class="img-fluid img-80" src="../assets/images/dashboard-sass/handshake.png" alt=""&gt;
+                                      |         &lt;/div&gt;
+                                      |       &lt;/div&gt;
+                                      |     &lt;/div&gt;
+                                      |     &lt;div class="col-6"&gt;
+                                      |       &lt;div class="card overview-color"&gt;
+                                      |         &lt;div class="card-body bg-gradient-primary text-center"&gt;
+                                      |           &lt;h4&gt;$1800&lt;/h4&gt;
+                                      |           &lt;div class="btn btn-pill btn-sm f-12"&gt;Today Earning&lt;/div&gt;&lt;img class="img-fluid img-60" src="../assets/images/dashboard-sass/graph.png" alt=""&gt;
+                                      |         &lt;/div&gt;
+                                      |       &lt;/div&gt;
+                                      |     &lt;/div&gt;
+                                      |     &lt;div class="col-sm-12"&gt;
+                                      |       &lt;div class="progress-sass"&gt;
+                                      |         &lt;div class="sass-overview"&gt;&lt;span class="f-w-600"&gt;Meeting : 85%&lt;/span&gt;&lt;span class="pull-right f-w-600"&gt;85 / &lt;span class="over-color"&gt;100&lt;/span&gt;&lt;/span&gt;
+                                      |           &lt;div class="progress-gradient-fill"&gt;
+                                      |             &lt;div class="progress sm-progress-bar progress-animate"&gt;
+                                      |               &lt;div class="progress-gradient-danger" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"&gt;&lt;span class="animate-circle"&gt;&lt;/span&gt;&lt;/div&gt;|            &lt;/div&gt;
+                                      |           &lt;/div&gt;
+                                      |         &lt;/div&gt;
+                                      |         &lt;div class="sass-overview"&gt;&lt;span class="f-w-600"&gt;Deals : 60%&lt;/span&gt;&lt;span class="pull-right f-w-600"&gt;60 / &lt;span class="over-color"&gt;100&lt;/span&gt;&lt;/span&gt;| &lt;div class="progress-gradient-fill"&gt;
+                                      |           &lt;div class="progress sm-progress-bar progress-animate"&gt;
+                                      |             &lt;div class="progress-gradient-danger" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"&gt;&lt;span class="animate-circle"&gt;&lt;/span&gt;&lt;/div&gt;
+                                      |           &lt;/div&gt;
+                                      |         &lt;/div&gt;
+                                      |       &lt;/div&gt;
+                                      |       &lt;div class="sass-overview"&gt;&lt;span class="f-w-600"&gt;Order Value : 30%&lt;/span&gt;&lt;span class="pull-right f-w-600"&gt;30 / &lt;span class="over-color"&gt;100&lt;/span&gt;&lt;/span&gt;
+                                      |         &lt;div class="progress-gradient-fill"&gt;
+                                      |           &lt;div class="progress sm-progress-bar progress-animate"&gt;
+                                      |             &lt;div class="progress-gradient-danger" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"&gt;&lt;span class="animate-circle"&gt;&lt;/span&gt;&lt;/div&gt;
+                                      |             &lt;/div&gt;
+                                      |           &lt;/div&gt;
+                                      |         &lt;/div&gt;
+                                      |       &lt;/div&gt;
+                                      |     &lt;/div&gt;
+                                      |   &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;!-- Cod Box Copy end --&gt;      
+                        .col-xl-4.xl-50.box-col-6
+                          .card.o-hidden
+                            .card-header
+                              h5 New
+                              .card-header-right
+                                ul.list-unstyled.card-option
+                                  li
+                                    i.icofont.icofont-double-left
+                                  li
+                                    i.view-html.fa.fa-code
+                                  li
+                                    i.icofont.icofont-maximize.full-card
+                                  li
+                                    i.icofont.icofont-minus.minimize-card
+                                  li
+                                    i.icofont.icofont-refresh.reload-card
+                                  li
+                                    i.icofont.icofont-error.close-card
+                            .card-body.p-0
+                              .sales-product-table.crypto-table-market.sass-table.table-responsive
+                                table.table.table-bordernone
+                                  tbody
+                                    tr
+                                      td
+                                        .media
+                                          img.img-fluid.rounded-circle.img-40.mr-3(src='../assets/images/avtar/7.jpg', alt='')
+                                          .media-body
+                                            span.f-w-600.d-block Ossim Keter
+                                            small.f-w-600 1
+                                              sup st
+                                              |  Year
+                                      td.text-center
+                                        span.f-w-600.d-block 1
+                                        small.f-w-600 Rank
+                                      td
+                                        img.img-fluid(src='../assets/images/dashboard-sass/graph-1.png', alt='') 
+                                    tr
+                                      td
+                                        .media
+                                          img.img-fluid.rounded-circle.img-40.mr-3(src='../assets/images/avtar/4.jpg', alt='')
+                                          .media-body
+                                            span.f-w-600.d-block Venter Loren
+                                            small.f-w-600 1
+                                              sup st
+                                              |  Year
+                                      td.text-center
+                                        span.f-w-600.d-block 2
+                                        small.f-w-600 Rank
+                                      td
+                                        img.img-fluid(src='../assets/images/dashboard-sass/graph-2.png', alt='') 
+                                    tr
+                                      td
+                                        .media
+                                          img.img-fluid.rounded-circle.img-40.mr-3(src='../assets/images/avtar/16.jpg', alt='')
+                                          .media-body
+                                            span.f-w-600.d-block Fran Loren
+                                            small.f-w-600 1
+                                              sup st
+                                              |  Year
+                                      td.text-center
+                                        span.f-w-600.d-block 3
+                                        small.f-w-600 Rank
+                                      td
+                                        img.img-fluid(src='../assets/images/dashboard-sass/graph-3.png', alt='') 
+                                    tr
+                                      td
+                                        .media
+                                          img.img-fluid.rounded-circle.img-40.mr-3(src='../assets/images/avtar/11.jpg', alt='')
+                                          .media-body
+                                            span.f-w-600.d-block Loften Horen
+                                            small.f-w-600 1
+                                              sup st
+                                              |  Year
+                                      td.text-center
+                                        span.f-w-600.d-block 4
+                                        small.f-w-600 Rank
+                                      td
+                                        img.img-fluid(src='../assets/images/dashboard-sass/graph-4.png', alt='') 
+                                    tr
+                                      td
+                                        .media
+                                          img.img-fluid.rounded-circle.img-40.mr-3(src='../assets/images/avtar/3.jpg', alt='')
+                                          .media-body
+                                            span.f-w-600.d-block Loie Fenter
+                                            small.f-w-600 1
+                                              sup st
+                                              |  Year
+                                      td.text-center
+                                        span.f-w-600.d-block 5
+                                        small.f-w-600 Rank
+                                      td
+                                        img.img-fluid(src='../assets/images/dashboard-sass/graph-5.png', alt='') 
+                              .code-box-copy
+                                button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head2', title='Copy')
+                                  i.icofont.icofont-copy-alt
+                                pre
+                                  code.language-html#example-head2
+                                      | &lt;!-- Cod Box Copy begin --&gt;
+                                      | &lt;div class="sales-product-table crypto-table-market sass-table table-responsive"&gt;
+                                      |   &lt;table class="table table-bordernone"&gt;
+                                      |     &lt;tbody&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;
+                                      |           &lt;div class="media"&gt;&lt;img class="img-fluid rounded-circle img-40 mr-3" src="../assets/images/avtar/7.jpg" alt=""&gt;
+                                      |             &lt;div class="media-body"&gt;&lt;span class="f-w-600 d-block"&gt;Ossim Keter&lt;/span&gt;&lt;small class="f-w-600"&gt;1&lt;sup&gt;st&lt;/sup&gt; Year&lt;/small&gt;&lt;/div&gt;
+                                      |           &lt;/div&gt;
+                                      |         &lt;/td&gt;
+                                      |         &lt;td class="text-center"&gt;&lt;span class="f-w-600 d-block"&gt;1&lt;/span&gt;&lt;small class="f-w-600"&gt;Rank&lt;/small&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;img class="img-fluid mr-3" src="../assets/images/dashboard-sass/graph-1.png" alt=""&gt;&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;
+                                      |           &lt;div class="media"&gt;&lt;img class="img-fluid rounded-circle img-40 mr-3" src="../assets/images/avtar/4.jpg" alt=""&gt;
+                                      |             &lt;div class="media-body"&gt;&lt;span class="f-w-600 d-block"&gt;Venter Loren&lt;/span&gt;&lt;small class="f-w-600"&gt;1&lt;sup&gt;st&lt;/sup&gt; Year&lt;/small&gt;&lt;/div&gt;
+                                      |           &lt;/div&gt;
+                                      |         &lt;/td&gt;
+                                      |         &lt;td class="text-center"&gt;&lt;span class="f-w-600 d-block"&gt;2&lt;/span&gt;&lt;small class="f-w-600"&gt;Rank&lt;/small&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;img class="img-fluid mr-3" src="../assets/images/dashboard-sass/graph-2.png" alt=""&gt;&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;
+                                      |           &lt;div class="media"&gt;&lt;img class="img-fluid rounded-circle img-40 mr-3" src="../assets/images/avtar/16.jpg" alt=""&gt;
+                                      |             &lt;div class="media-body"&gt;&lt;span class="f-w-600 d-block"&gt;Fran Loren&lt;/span&gt;&lt;small class="f-w-600"&gt;1&lt;sup&gt;st&lt;/sup&gt; Year&lt;/small&gt;&lt;/div&gt;
+                                      |           &lt;/div&gt;
+                                      |         &lt;/td&gt;
+                                      |         &lt;td class="text-center"&gt;&lt;span class="f-w-600 d-block"&gt;3&lt;/span&gt;&lt;small class="f-w-600"&gt;Rank&lt;/small&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;img class="img-fluid mr-3" src="../assets/images/dashboard-sass/graph-3.png" alt=""&gt;&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr class="btn-gradient-custom"&gt;
+                                      |         &lt;td&gt;
+                                      |           &lt;div class="media"&gt;&lt;img class="img-fluid rounded-circle img-40 mr-3" src="../assets/images/avtar/11.jpg" alt=""&gt;
+                                      |             &lt;div class="media-body"&gt;&lt;span class="f-w-600 d-block"&gt;Loften Horen&lt;/span&gt;&lt;small class="f-w-600"&gt;1&lt;sup&gt;st&lt;/sup&gt; Year&lt;/small&gt;&lt;/div&gt;
+                                      |           &lt;/div&gt;
+                                      |         &lt;/td&gt;
+                                      |         &lt;td class="text-center"&gt;&lt;span class="f-w-600 d-block"&gt;4&lt;/span&gt;&lt;small class="f-w-600"&gt;Rank&lt;/small&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;img class="img-fluid mr-3" src="../assets/images/dashboard-sass/graph-4.png" alt=""&gt;&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;
+                                      |           &lt;div class="media"&gt;&lt;img class="img-fluid rounded-circle img-40 mr-3" src="../assets/images/avtar/3.jpg" alt=""&gt;
+                                      |             &lt;div class="media-body"&gt;&lt;span class="f-w-600 d-block"&gt;Loie Fenter&lt;/span&gt;&lt;small class="f-w-600"&gt;1&lt;sup&gt;st&lt;/sup&gt; Year&lt;/small&gt;&lt;/div&gt;
+                                      |           &lt;/div&gt;
+                                      |         &lt;/td&gt;
+                                      |         &lt;td class="text-center"&gt;&lt;span class="f-w-600 d-block"&gt;5&lt;/span&gt;&lt;small class="f-w-600"&gt;Rank&lt;/small&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;img class="img-fluid mr-3" src="../assets/images/dashboard-sass/graph-5.png" alt=""&gt;&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |     &lt;/tbody&gt;
+                                      |   &lt;/table&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;!-- Cod Box Copy end --&gt;
+                        .col-xl-4.xl-50.box-col-6
+                          .card
+                            .card-header.crypto-header
+                              h5 Shipment
+                              .chart-value-box.pull-right
+                                .value-square-box-primary
+                                span.f-12.f-w-600 Near
+                                .value-square-box-secondary.ml-3
+                                span.f-12.f-w-600 Far
+                              .card-header-right
+                                ul.list-unstyled.card-option
+                                  li
+                                    i.icofont.icofont-double-left
+                                  li
+                                    i.view-html.fa.fa-code
+                                  li
+                                    i.icofont.icofont-maximize.full-card
+                                  li
+                                    i.icofont.icofont-minus.minimize-card
+                                  li
+                                    i.icofont.icofont-refresh.reload-card
+                                  li
+                                    i.icofont.icofont-error.close-card
+                            .card-body
+                               #usa.jvector-map-sass
+                               .row.crypto-current.sass-map-details
+                                  .col-sm-6.current-balance
+                                    .btn-vertical-align
+                                      button.btn.btn-pill.btn-gradient-custom
+                                        | $18,000
+                                        span.round-shape
+                                          i.icofont.icofont-arrow-right
+                                  .col-sm-6
+                                    .sass-inner-map.pull-right
+                                      h6.mb-0.f-w-600.d-inline-block $17,500
+                                      span
+                                        i.fa.fa-sort-up.ml-2.mr-4.font-primary
+                                      h6.mb-0.f-w-600.d-inline-block $500
+                                      span.arrow-align-map
+                                        i.fa.fa-sort-down.ml-2.font-secondary
+                               .code-box-copy
+                                button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head3', title='Copy')
+                                  i.icofont.icofont-copy-alt
+                                pre
+                                  code.language-html#example-head3
+                                      | &lt;!-- Cod Box Copy begin --&gt;
+                                      | &lt;div class="jvector-map-sass" id="usa"&gt;&lt;/div&gt;
+                                      | &lt;div class="row crypto-current sass-map-details"&gt;
+                                      |   &lt;div class="col-sm-6 current-balance"&gt;
+                                      |     &lt;div class="btn-vertical-align"&gt;
+                                      |       &lt;button class="btn btn-pill btn-gradient-custom"&gt;$18,000&lt;span class="round-shape"&gt;&lt;i class="icofont icofont-arrow-right"&gt;&lt;/i&gt;&lt;/span&gt;&lt;/button&gt;
+                                      |     &lt;/div&gt;
+                                      |   &lt;/div&gt;
+                                      |   &lt;div class="col-sm-6"&gt;
+                                      |     &lt;div class="sass-inner-map pull-right"&gt;
+                                      |       &lt;h6 class="mb-0 f-w-600 d-inline-block"&gt;$17,500&lt;/h6&gt;&lt;span&gt;&lt;i class="fa fa-sort-up ml-2 mr-4 font-primary"&gt;&lt;/i&gt;&lt;/span&gt;
+                                      |       &lt;h6 class="mb-0 f-w-600 d-inline-block"&gt;$500&lt;/h6&gt;&lt;span class="arrow-align-map"&gt;&lt;i class="fa fa-sort-down ml-2 font-secondary"&gt;&lt;/i&gt;&lt;/span&gt;
+                                      |     &lt;/div&gt;
+                                      |   &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;!-- Cod Box Copy end --&gt;
+                        .col-xl-4.xl-50.box-col-6
+                          .card
+                            .card-header.crypto-header
+                              h5 Total Profit
+                              .chart-value-box.pull-right
+                                span.f-12.f-w-600 
+                                  span.font-primary +7.9% 
+                                  | vs Last 7 Days
+                              .card-header-right
+                                ul.list-unstyled.card-option
+                                  li
+                                    i.icofont.icofont-double-left
+                                  li
+                                    i.view-html.fa.fa-code
+                                  li
+                                    i.icofont.icofont-maximize.full-card
+                                  li
+                                    i.icofont.icofont-minus.minimize-card
+                                  li
+                                    i.icofont.icofont-refresh.reload-card
+                                  li
+                                    i.icofont.icofont-error.close-card
+                            .card-body
+                              .sass-apex-radial
+                                #radial
+                              .code-box-copy
+                                button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head4', title='Copy')
+                                  i.icofont.icofont-copy-alt
+                                pre
+                                  code.language-html#example-head4
+                                      | &lt;!-- Cod Box Copy begin --&gt;
+                                      | &lt;div class="sass-apex-radial"&gt;
+                                      |   &lt;div id="radial"&gt;&lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;!-- Cod Box Copy end --&gt;
+                        .col-xl-8.xl-50.box-col-12
+                          .card
+                            .card-header.crypto-header
+                              h5 Users Chart
+                              .chart-value-box.pull-right
+                                .value-square-box-secondary
+                                span.f-12.f-w-600 Current
+                                .value-square-box-light.ml-3
+                                span.f-12.f-w-600 Highest
+                              .card-header-right
+                                ul.list-unstyled.card-option
+                                  li
+                                    i.icofont.icofont-double-left
+                                  li
+                                    i.view-html.fa.fa-code
+                                  li
+                                    i.icofont.icofont-maximize.full-card
+                                  li
+                                    i.icofont.icofont-minus.minimize-card
+                                  li
+                                    i.icofont.icofont-refresh.reload-card
+                                  li
+                                    i.icofont.icofont-error.close-card
+                            .card-body
+                              .ct-10.chartist-sass-container
+                        .col-sm-12
+                          .card
+                            .card-header.crypto-header
+                              h5 Monthly Revenue Progress
+                              .chart-value-box.pull-right
+                                .value-square-box-success.mr-2
+                                span.f-12.f-w-600 Highest Value
+                              .card-header-right
+                                ul.list-unstyled.card-option
+                                  li
+                                    i.icofont.icofont-double-left
+                                  li
+                                    i.view-html.fa.fa-code
+                                  li
+                                    i.icofont.icofont-maximize.full-card
+                                  li
+                                    i.icofont.icofont-minus.minimize-card
+                                  li
+                                    i.icofont.icofont-refresh.reload-card
+                                  li
+                                    i.icofont.icofont-error.close-card
+                            .card-body.chart-block
+                              .apex-chart-container
+                                #area-spaline
+                                .our-growth-bottom.sass-graph-card
+                                  .media
+                                    span.f-12.f-w-600 Our Growth
+                                    span.pull-right.badge.badge-pill.ml-3
+                                      span.font-success
+                                        span.d-inline-block
+                                          i.fa.fa-sort-up
+                                        |  9.4%
+                              .code-box-copy
+                                button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head', title='Copy')
+                                  i.icofont.icofont-copy-alt
+                                pre
+                                  code.language-html#example-head
+                                      | &lt;!-- Cod Box Copy begin --&gt;
+                                      | &lt;div class="apex-chart-container"&gt;
+                                      |   &lt;div id="area-spaline"&gt;&lt;/div&gt;
+                                      |   &lt;div class="our-growth-bottom sass-graph-card"&gt;
+                                      |     &lt;div class="media"&gt;&lt;span class="f-12 f-w-600"&gt;Our Growth&lt;/span&gt;&lt;span class="pull-right badge badge-pill ml-3"&gt;
+                                      | &lt;span class="font-success"&gt;&lt;span class="d-inline-block"&gt;&lt;i class="fa fa-sort-up"&gt;&lt;/i&gt;&lt;/span&gt; 9.4%&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;!-- Cod Box Copy end --&gt;
+                    // Container-fluid Ends
+                include ../../components/footer
+        include ../../components/footer-files

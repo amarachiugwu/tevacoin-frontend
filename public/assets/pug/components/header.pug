@@ -1,0 +1,172 @@
+// Page Header Start
+- var status = (sidebar_open ? 'open' : (megamenu ? 'mega-menu-header' : ''));
+- var status_toggle = (sidebar_open ? undefined : 'checked');
+- var header_status = (vertical_menu ? 'd-none' : 'd-block');
+
+
+.page-main-header(class=status)
+                .main-header-right.row
+                    .main-header-left.d-lg-none
+                        .logo-wrapper
+                            a(href='index.html')
+                                img(src='../assets/images/creative-logo1.png', alt='')
+                    .mobile-sidebar(class=header_status)
+                        .media-body.text-right.switch-sm
+                            label.switch
+                                input#sidebar-toggle(type='checkbox', checked=status_toggle)
+                                span.switch-state
+                    .vertical-mobile-sidebar
+                        i.fa.fa-bars.sidebar-bar
+                    .nav-right.col.left-menu-header
+                        ul.nav-menus-left
+                            li
+                                a.text-dark(href='#!', onclick='javascript:toggleFullScreen()')
+                                    i(data-feather='maximize')
+                            li
+                                .dropdown
+                                  button.btn.dropdown-toggle(type='button', data-toggle='dropdown')
+                                    | Category 
+                                    span.mx-2.badge.badge-pill.badge-primary 2
+                                  .dropdown-menu
+                                    a.dropdown-item(href='#') Admin
+                                    a.dropdown-item(href='#') Shopify
+                                    a.dropdown-item(href='#') Ecommerce
+                                    a.dropdown-item(href='#') Prestashop
+                            li
+                                .dropdown
+                                    button.btn.dropdown-toggle(type='button', data-toggle='dropdown')
+                                        | Status
+                                        span.mx-2.badge.badge-pill.badge-primary 7
+                                    .dropdown-menu.p-0
+                                        ul.status-dropdown
+                                            li
+                                                h6.mb-0 Ongoing Projects
+                                            li
+                                                p.mb-0 HTML5 Validation Report
+                                                .progress.sm-progress-bar
+                                                    .progress-bar.bg-primary(role='progressbar', style='width: 80%', aria-valuenow='80', aria-valuemin='0', aria-valuemax='100')
+                                            li
+                                                p.mb-0 Bootstrap Admin Templates
+                                                .progress.sm-progress-bar
+                                                    .progress-bar.bg-secondary(role='progressbar', style='width: 60%', aria-valuenow='60', aria-valuemin='0', aria-valuemax='100')
+                                            li
+                                                p.mb-0 Goggle Crome Extension
+                                                .progress.sm-progress-bar
+                                                    .progress-bar.bg-success(role='progressbar', style='width: 45%', aria-valuenow='45', aria-valuemin='0', aria-valuemax='100')
+                                            li
+                                                p.mb-0 Clients Projects
+                                                .progress.sm-progress-bar
+                                                    .progress-bar.bg-info(role='progressbar', style='width: 70%', aria-valuenow='70', aria-valuemin='0', aria-valuemax='100')
+                            li
+                                .dropdown
+                                    button.btn.dropdown-toggle(type='button', data-toggle='dropdown')
+                                        | Order
+                                        span.mx-2.badge.badge-pill.badge-primary 1
+                                    .dropdown-menu
+                                        a.dropdown-item(href='#') Paypal
+                                        a.dropdown-item(href='#') Credit Card
+                                        a.dropdown-item(href='#') Visa
+                                        a.dropdown-item(href='#') Paytm
+                        .d-xl-none.mobile-toggle-left.pull-right
+                            i(data-feather='more-horizontal')
+                    .nav-right.col.pull-right.right-menu
+                        if megamenu
+                            include megamenu
+                        ul.nav-menus
+                            li
+                                form.form-inline.search-form
+                                    span.mobile-search.search-icon
+                                        i.fa.fa-search
+                            li  
+                                .dropdown
+                                    button.btn.dropdown-toggle(type='button', data-toggle='dropdown')
+                                        span.media.user-header
+                                            img.mr-2.rounded-circle.img-35(src='../assets/images/dashboard/user.png', alt='')
+                                            span.media-body
+                                                span.f-12.f-w-600 Elana Saint
+                                                span.d-block Admin
+                                    .dropdown-menu.p-0
+                                        ul.profile-dropdown
+                                          li.gradient-primary-1
+                                                h6.mb-0 Elana Saint
+                                                span Web Designer
+                                          li
+                                            i(data-feather='user') 
+                                            | Profile
+                                          li
+                                            i(data-feather='message-square') 
+                                            | Inbox
+                                          li
+                                            i(data-feather='file-text') 
+                                            | Taskboard
+                                          li
+                                            i(data-feather='settings') 
+                                            | Settings
+                            li
+                                .dropdown
+                                    button.btn.dropdown-toggle(type='button', data-toggle='dropdown')
+                                        i(data-feather='bell')
+                                        span.notification.badge.badge-pill.badge-danger.f-10 2
+                                    .dropdown-menu.p-0
+                                        ul.notification-dropdown
+                                            li.gradient-primary-1
+                                                h6 Notifications
+                                                span You have 6 unread messages
+                                            li
+                                                .media
+                                                    .notification-icons.bg-success.mr-3
+                                                        i.mt-0(data-feather='thumbs-up')
+                                                    .media-body
+                                                        h6 Someone Likes Your Posts
+                                                        p.mb-0  2 Hours Ago
+                                            li.pt-0
+                                                .media
+                                                    .notification-icons.bg-info.mr-3
+                                                        i.mt-0(data-feather='message-circle')
+                                                    .media-body
+                                                        h6 3 New Comments
+                                                        p.mb-0  1 Hours Ago
+                                            li.bg-light.txt-dark
+                                                a(href='#') All 
+                                                |  notification
+                            li
+                                a.right_side_toggle(href='#')
+                                    i(data-feather='message-square')
+                            li
+                                .dropdown
+                                    button.btn.dropdown-toggle(type='button', data-toggle='dropdown')
+                                        i(data-feather='droplet')
+                                    .dropdown-menu.p-0        
+                                        ul.droplet-dropdown
+                                            li.gradient-primary-1.text-center
+                                                h6 Grid Dashboard
+                                                span Easy Grid inside dropdown
+                                            li
+                                                .row
+                                                    .col-sm-4.col-6.droplet-main
+                                                        i(data-feather='file-text')
+                                                        span.d-block Content
+                                                    .col-sm-4.col-6.droplet-main
+                                                        i(data-feather='activity')
+                                                        span.d-block Activity
+                                                    .col-sm-4.col-6.droplet-main
+                                                        i(data-feather='users')
+                                                        span.d-block Contacts
+                                                    .col-sm-4.col-6.droplet-main
+                                                        i(data-feather='clipboard')
+                                                        span.d-block Reports
+                                                    .col-sm-4.col-6.droplet-main
+                                                        i(data-feather='anchor')
+                                                        span.d-block Automation
+                                                    .col-sm-4.col-6.droplet-main
+                                                        i(data-feather='settings')
+                                                        span.d-block Settings
+                                            li.text-center
+                                                button.btn.btn-primary.btn-air-primary Follows Up
+                    form.form-inline.search-full
+                        .form-group.form-control-plaintext
+                            input(type='search', placeholder='Search..')
+                            i.icon-close.close-search
+                    .d-lg-none.mobile-toggle.pull-right
+                        i(data-feather='more-horizontal')
+// Page Header Ends                              

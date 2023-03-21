@@ -1,0 +1,148 @@
+/**=====================
+     54. Tour  CSS Start
+==========================**/
+
+.introjs-helperLayer {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
+}
+.introjs-tooltipReferenceLayer {
+  background-color: transparent;
+}
+.introjs-helperNumberLayer {
+    padding: 4px;
+    background-image: linear-gradient(#1693f8, #0d67e9);
+    color: $white;
+    text-shadow: none;
+    border: none;
+}
+.introjs-arrow {
+  border: 12px solid $white;
+  &.top {
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: $tour-color;
+    border-left-color: transparent;
+  }
+  &.top-right {
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: $tour-color;
+    border-left-color: transparent;
+  }
+  &.top-middle {
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: $tour-color;
+    border-left-color: transparent;
+  }
+  &.right {
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: $tour-color;
+  }
+  &.right-bottom {
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: $tour-color;
+  }
+  &.bottom {
+    border-top-color: $tour-color;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+  &.left {
+    border-top-color: transparent;
+    border-right-color: $tour-color;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+  &.left-bottom {
+    border-top-color: transparent;
+    border-right-color: $tour-color;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+}
+
+.introjs-tooltip {
+  background-color: $tour-color;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
+  color: $white;
+  border-color: $tour-color;
+      border-radius: 15px;
+  .introjs-tooltiptext{
+       font-size: 20px;
+  }
+}
+.introjs-button {
+  border: 1px solid $light-semi-gray;
+  text-shadow: none;
+  color: $white !important;
+  background-color: $primary-color;
+  background-image: none;
+      border-radius: 15px;
+      font-size: 13px;
+  &:hover {
+    border-color: $light-semi-gray;
+  }
+  &:focus, &:active {
+    background-image: linear-gradient(#1693f8, #0d67e9);
+  }
+}
+.introjs-skipbutton {
+  color: $tour-color;
+}
+.introjs-prevbutton {
+  &.introjs-fullbutton {
+    border: 1px solid $light-semi-gray;
+  }
+}
+.introjs-disabled {
+  color: $tour-color;
+  border-color: $light-semi-gray;
+  &:hover, &:focus {
+    color: $tour-color;
+    border-color: $light-semi-gray;
+  }
+}
+.introjs-bullets {
+  ul {
+    li {
+      a {
+        background: #71bcfa;
+        height: 10px;
+        width: 10px;
+        &:hover {
+          background: $white;
+        }
+        &.active {
+          background: $white;
+        }
+      }
+    }
+  }
+}
+.introjs-progress {
+  background-color: $light-color;
+}
+.introjs-progressbar {
+  background-color: $tour-color;
+}
+.introjs-hint:hover > .introjs-hint-pulse {
+  border: 5px solid rgba(60, 60, 60, 0.57);
+}
+.introjs-hint-pulse {
+  border: 5px solid rgba(60, 60, 60, 0.27);
+  background-color: rgba(136, 136, 136, 0.24);
+}
+.introjs-hint-dot {
+  border: 10px solid rgba(146, 146, 146, 0.36);
+}
+/**=====================
+    54. Tour  CSS Ends
+==========================**/

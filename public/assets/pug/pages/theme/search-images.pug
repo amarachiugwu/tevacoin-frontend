@@ -1,0 +1,395 @@
+- var chat_menu             = true;
+- var theme_customizer      = true;
+- var tooltip               = true;
+- var photo_swipe           = true;
+- var vector_map            = true;
+doctype html
+html(lang='en')
+    include ../../components/header-files
+    body
+        include ../../components/loader
+        // page-wrapper Start
+        .page-wrapper
+            include ../../components/header
+            // Page Body Start
+            .page-body-wrapper
+                include ../../components/sidebar
+                include ../../components/chat-sidebar
+                .page-body
+                    .container-fluid
+                        .page-header
+                            .row
+                                .col-lg-6
+                                    h3
+                                      | Search Website
+                                    ol.breadcrumb
+                                      li.breadcrumb-item
+                                        a(href='index.html')
+                                         | Home
+                                      li.breadcrumb-item Search Pages
+                                      li.breadcrumb-item.active Search Website
+                                .col-lg-6
+                                  include ../../components/bookmark
+                    // Container-fluid starts
+                    .container-fluid.search-page
+                      .row
+                        .col-sm-12
+                          .card
+                            .card-header
+                              form.search-form
+                                .form-group.m-0
+                                  label.sr-only Email
+                                  input.form-control-plaintext(type='search', placeholder='Search..')
+                            .card-body
+                              ul#top-tab.nav.nav-tabs.mb-2(role='tablist')
+                                li.nav-item
+                                  a#all-link.nav-link(data-toggle='tab', href='#all-links', role='tab', aria-selected='true')
+                                    i.icon-target
+                                    | All
+                                  .material-border
+                                li.nav-item
+                                  a#image-link.nav-link.active(data-toggle='tab', href='#image-links', role='tab', aria-selected='false')
+                                    i.icon-image
+                                    | Images
+                                  .material-border
+                                li.nav-item
+                                  a#video-link.nav-link(data-toggle='tab', href='#video-links', role='tab', aria-selected='false')
+                                    i.icon-video-clapper
+                                    | Videos
+                                  .material-border
+                                .dropdown
+                                  button#dropdownMenuButton.nav-link.active.btn-primary.dropdown-toggle(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+                                    i.icon-settings
+                                    | Settings
+                                  .dropdown-menu(aria-labelledby='dropdownMenuButton')
+                                    a.dropdown-item(href='#') Search setting
+                                    a.dropdown-item(href='#') Language
+                                    a.dropdown-item(href='#') Shopping
+                                    a.dropdown-item(href='#') Flights
+                                    a.dropdown-item(href='#') Finance
+    
+                                  .material-border
+                              #top-tabContent.tab-content
+                                #all-links.search-links.tab-pane.fade(role='tabpanel', aria-labelledby='all-link')
+                                  .row
+                                    .col-xl-6.box-col-12
+                                      p.pb-4 About 6,000 results (0.60 seconds)
+                                      .info-block
+                                        h6 Endless - Bootstrap 4 Admin Template by PixelStrap ...
+                                        a(href='https://themeforest.net/user/pixelstrap') endless-bootstrap-4-admin-template
+                                        p
+                                          | Endless admin theme. Endless Admin is a full featured, multipurpose, premium bootstrap admin template built with Bootstrap 4 Framework, ...
+                                        .star-ratings
+                                          ul.search-info
+                                            li 5 stars
+                                            li 590 votes
+                                            li themes
+                                      .info-block
+                                        h6 Endless - Angular 8 Admin Template by PixelStrap ...
+                                        a(href='https://themeforest.net/user/pixelstrap') https://themeforest.net › item › endless-angular-admin-template
+                                        p
+                                          | Endless Angular Theme is pure angular theme, Yes! you read correct, it's No Jquery angular admin theme including all feature and functionality ...
+                                        .star-ratings
+                                          ul.search-info
+                                            li 4.5 stars
+                                            li 500 votes
+                                            li themes
+                                      .info-block
+                                        h6 Multikart - eCommerce HTML Template by PixelStrap ...
+                                        a(href='https://themeforest.net/user/pixelstrap') https://themeforest.net › item › multikart-responsive-ecommerce-html-tem..
+                                        p
+                                          | Buy Multikart - eCommerce HTML Template by PixelStrap on ThemeForest. Multikart – Multi-Purpose Responsive Ecommerce HTML Theme ...
+                                        .star-ratings
+                                          ul.search-info
+                                            li
+                                              i.icofont.icofont-ui-rating
+                                              i.icofont.icofont-ui-rating
+                                              i.icofont.icofont-ui-rating
+                                              i.icofont.icofont-ui-rating
+                                              i.icofont.icofont-ui-rating
+                                            li 5 stars
+                                            li 590 votes
+                                            li themes
+                                      .info-block
+                                        h6 Multikart - Multipurpose Shopify Theme by PixelStrap ...
+                                        a(href='https://themeforest.net/user/pixelstrap') angular.pixelstrap.com › multikart
+                                        p
+                                          | Reasones to Buy Multikart. Multikart HTML template is an apparently simple but highly functional tempalate designed for creating a flourisahing online business.
+                                        .star-ratings
+                                          ul.search-info
+                                            li
+                                              i.icofont.icofont-ui-rating
+                                              i.icofont.icofont-ui-rating
+                                              i.icofont.icofont-ui-rating
+                                              i.icofont.icofont-ui-rating
+                                              i.icofont.icofont-ui-rating
+                                            li 5 stars
+                                            li 590 votes
+                                            li themes
+                                      .info-block
+                                        h6 MultiKart Ecommerce Angular 8 | Angular Shopping Theme
+                                        a(href='https://themeforest.net/user/pixelstrap') angular.pixelstrap.com › multikart
+
+                                        p
+                                          | Multikart - Responsive React eCommerce Template #Responsive, #Multikart, #React, #Template.
+                                        .star-ratings
+                                          ul.search-info
+                                            li
+                                              i.icofont.icofont-ui-rating
+                                              i.icofont.icofont-ui-rating
+                                              i.icofont.icofont-ui-rating
+                                              i.icofont.icofont-ui-rating
+                                              i.icofont.icofont-ui-rate-blank
+                                            li 5 stars
+                                            li 590 votes
+                                            li themes
+                                      .info-block
+                                        nav(aria-label='...')
+                                          ul.pagination.pagination-primary
+                                            li.page-item.disabled
+                                              a.page-link(href='#', tabindex='-1') Previous
+                                            li.page-item
+                                              a.page-link(href='#') 1
+                                            li.page-item.active
+                                              a.page-link(href='#')
+                                                | 2 
+                                                span.sr-only (current)
+                                            li.page-item
+                                              a.page-link(href='#') 3
+                                            li.page-item
+                                              a.page-link(href='#') Next
+                                    .col-xl-6.box-col-12
+                                      .card.lg-mt.mb-0
+                                        .blog-box.blog-shadow
+                                          img.img-fluid(src='../assets/images/blog/blog.jpg', alt='')
+                                          .blog-details
+                                            p.digits 25 July 2019
+                                            h4 Accusamus et iusto odio dignissimos ducimus qui blanditiis.
+                                            ul.blog-social.digits
+                                              li
+                                                i.icofont.icofont-user
+                                                | Mark Jecno
+                                              li
+                                                i.icofont.icofont-thumbs-up
+                                                | 02 Hits
+                                #image-links.tab-pane.fade.show.active(role='tabpanel', aria-labelledby='image-link')
+                                  .info-block
+                                    p.pb-4.digits About 12,120 results (0.50 seconds)
+                                    #aniimated-thumbnials.my-gallery.row.gallery-with-description(itemscope='')
+                                      figure.col-xl-3.col-sm-6(itemprop='associatedMedia', itemscope='')
+                                        a(href='../assets/images/big-lightgallry/01.jpg', itemprop='contentUrl', data-size='1600x950')
+                                          img(src='../assets/images/lightgallry/01.jpg', itemprop='thumbnail', alt='Image description')
+                                          .caption
+                                            h4 Portfolio Title
+                                            p
+                                              | is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.
+                                        figcaption(itemprop='caption description')
+                                          h4 Portfolio Title
+                                          p
+                                            | is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.
+                                      figure.col-xl-3.col-sm-6(itemprop='associatedMedia', itemscope='')
+                                        a(href='../assets/images/big-lightgallry/02.jpg', itemprop='contentUrl', data-size='1600x950')
+                                          img(src='../assets/images/lightgallry/02.jpg', itemprop='thumbnail', alt='Image description')
+                                          .caption
+                                            h4 Portfolio Title
+                                            p
+                                              | is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.
+                                        figcaption(itemprop='caption description')
+                                          h4 Portfolio Title
+                                          p
+                                            | is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.
+                                      figure.col-xl-3.col-sm-6(itemprop='associatedMedia', itemscope='')
+                                        a(href='../assets/images/big-lightgallry/03.jpg', itemprop='contentUrl', data-size='1600x950')
+                                          img(src='../assets/images/lightgallry/03.jpg', itemprop='thumbnail', alt='Image description')
+                                          .caption
+                                            h4 Portfolio Title
+                                            p
+                                              | is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.
+                                        figcaption(itemprop='caption description')
+                                          h4 Portfolio Title
+                                          p
+                                            | is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.
+                                      figure.col-xl-3.col-sm-6(itemprop='associatedMedia', itemscope='')
+                                        a(href='../assets/images/big-lightgallry/04.jpg', itemprop='contentUrl', data-size='1600x950')
+                                          img(src='../assets/images/lightgallry/04.jpg', itemprop='thumbnail', alt='Image description')
+                                          .caption
+                                            h4 Portfolio Title
+                                            p
+                                              | is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.
+                                        figcaption(itemprop='caption description')
+                                          h4 Portfolio Title
+                                          p
+                                            | is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.
+                                      figure.col-xl-3.col-sm-6(itemprop='associatedMedia', itemscope='')
+                                        a(href='../assets/images/big-lightgallry/05.jpg', itemprop='contentUrl', data-size='1600x950')
+                                          img(src='../assets/images/lightgallry/05.jpg', itemprop='thumbnail', alt='Image description')
+                                          .caption
+                                            h4 Portfolio Title
+                                            p
+                                              | is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.
+                                        figcaption(itemprop='caption description')
+                                          h4 Portfolio Title
+                                          p
+                                            | is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.
+                                      figure.col-xl-3.col-sm-6(itemprop='associatedMedia', itemscope='')
+                                        a(href='../assets/images/big-lightgallry/011.jpg', itemprop='contentUrl', data-size='1600x950')
+                                          img(src='../assets/images/lightgallry/011.jpg', itemprop='thumbnail', alt='Image description')
+                                          .caption
+                                            h4 Portfolio Title
+                                            p
+                                              | is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.
+                                        figcaption(itemprop='caption description')
+                                          h4 Portfolio Title
+                                          p
+                                            | is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.
+                                      figure.col-xl-3.col-sm-6(itemprop='associatedMedia', itemscope='')
+                                        a(href='../assets/images/big-lightgallry/010.jpg', itemprop='contentUrl', data-size='1600x950')
+                                          img(src='../assets/images/lightgallry/010.jpg', itemprop='thumbnail', alt='Image description')
+                                          .caption
+                                            h4 Portfolio Title
+                                            p
+                                              | is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.
+                                        figcaption(itemprop='caption description')
+                                          h4 Portfolio Title
+                                          p
+                                            | is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.
+                                      figure.col-xl-3.col-sm-6(itemprop='associatedMedia', itemscope='')
+                                        a(href='../assets/images/big-lightgallry/08.jpg', itemprop='contentUrl', data-size='1600x950')
+                                          img(src='../assets/images/lightgallry/08.jpg', itemprop='thumbnail', alt='Image description')
+                                          .caption
+                                            h4 Portfolio Title
+                                            p
+                                              | is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.
+                                        figcaption(itemprop='caption description')
+                                          h4 Portfolio Title
+                                          p
+                                            | is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.
+                                    // Root element of PhotoSwipe. Must have class pswp.
+                                    .pswp(tabindex='-1', role='dialog', aria-hidden='true')
+                                      //
+                                        Background of PhotoSwipe.
+                                        It's a separate element, as animating opacity is faster than rgba().
+                                      .pswp__bg
+                                      // Slides wrapper with overflow:hidden.
+                                      .pswp__scroll-wrap
+                                        // Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory.
+                                        // don't modify these 3 pswp__item elements, data is added later on.
+                                        .pswp__container
+                                          .pswp__item
+                                          .pswp__item
+                                          .pswp__item
+                                        // Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed.
+                                        .pswp__ui.pswp__ui--hidden
+                                          .pswp__top-bar
+                                            // Controls are self-explanatory. Order can be changed.
+                                            .pswp__counter
+                                            button.pswp__button.pswp__button--close(title='Close (Esc)')
+                                            button.pswp__button.pswp__button--share(title='Share')
+                                            button.pswp__button.pswp__button--fs(title='Toggle fullscreen')
+                                            button.pswp__button.pswp__button--zoom(title='Zoom in/out')
+                                            // Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR
+                                            // element will get class pswp__preloader--active when preloader is running
+                                            .pswp__preloader
+                                              .pswp__preloader__icn
+                                                .pswp__preloader__cut
+                                                  .pswp__preloader__donut
+                                          .pswp__share-modal.pswp__share-modal--hidden.pswp__single-tap
+                                            .pswp__share-tooltip
+                                          button.pswp__button.pswp__button--arrow--left(title='Previous (arrow left)')
+                                          button.pswp__button.pswp__button--arrow--right(title='Next (arrow right)')
+                                          .pswp__caption
+                                            .pswp__caption__center
+                                  .info-block.m-t-30
+                                    nav(aria-label='...')
+                                      ul.pagination.pagination-primary
+                                        li.page-item.disabled
+                                          a.page-link(href='#', tabindex='-1') Previous
+                                        li.page-item
+                                          a.page-link(href='#') 1
+                                        li.page-item.active
+                                          a.page-link(href='#')
+                                            | 2 
+                                            span.sr-only (current)
+                                        li.page-item
+                                          a.page-link(href='#') 3
+                                        li.page-item
+                                          a.page-link(href='#') Next
+                                #video-links.tab-pane.fade(role='tabpanel', aria-labelledby='video-link')
+                                  .row
+                                    .col-xl-6
+                                      p.pb-4 About 6,000 results (0.60 seconds)
+                                      .media.info-block
+                                        iframe.mr-3.mb-3(width='200', height='100', src='https://www.youtube.com/embed/AVFqh3SkA4Q')
+                                        .media-body
+                                          h6 Endless - Bootstrap 4 Admin Template by PixelStrap ...
+                                          a(href='https://themeforest.net/user/pixelstrap/portfolio') endless-bootstrap-4-admin-template
+                                          p
+                                            | endless admin theme. endless admin is a full featured, multipurpose, premium bootstrap admin template built with bootstrap 4 framework, ...
+                                          .star-ratings
+                                            ul.search-info
+                                              li 5 stars
+                                              li 590 votes
+                                              li themes
+                                      .media.info-block
+                                        iframe.mr-3.mb-3(width='200', height='100', src='https://www.youtube.com/embed/sjN0xhBT2AE')
+                                        .media-body
+                                          h6
+                                            | Endless - Angular 8 Admin Template by PixelStrap ...
+                                          a(href='https://themeforest.net/user/pixelstrap/portfolio') https://themeforest.net › item › endless-angular-admin-template
+                                          p
+                                            | endless angular theme is pure angular theme, yes! you read correct, it's no jquery angular admin theme including all feature and functionality ...
+                                          .star-ratings
+                                            ul.search-info
+                                              li 5 stars
+                                              li 590 votes
+                                              li themes
+                                      .media.info-block
+                                        iframe.mr-3.mb-3(width='200', height='100', src='https://www.youtube.com/embed/4iWtjctwAI0')                                         
+                                        .media-body
+                                          h6 Multikart - eCommerce HTML Template by PixelStrap ...
+                                          a(href='https://themeforest.net/user/pixelstrap/portfolio') https://themeforest.net › item › multikart-responsive-ecommerce-html-tem..
+                                          p
+                                            | buy multikart - ecommerce html template by pixelstrap on themeforest. multikart – multi-purpose responsive ecommerce html theme ...
+                                          .star-ratings
+                                            ul.search-info
+                                              li 5 stars
+                                              li 590 votes
+                                              li themes
+                                      .media.info-block
+                                        iframe.mr-3.mb-3(width='200', height='100', src='https://www.youtube.com/embed/GwNzqHQdEjE')
+                                        .media-body
+                                          h6 Multikart - Multipurpose Shopify Theme by PixelStrap ...
+                                          a(href='https://themeforest.net/user/pixelstrap/portfolio') angular.pixelstrap.com › multikart
+                                          p
+                                            | multikart - responsive react ecommerce template #responsive, #multikart, #react, #template.
+                                          .star-ratings
+                                            ul.search-info
+                                              li 5 stars
+                                              li 590 votes
+                                              li themes
+                                      .info-block
+                                        nav(aria-label='...')
+                                          ul.pagination.pagination-primary
+                                            li.page-item.disabled
+                                              a.page-link(href='#', tabindex='-1') Previous
+                                            li.page-item
+                                              a.page-link(href='#') 1
+                                            li.page-item.active
+                                              a.page-link(href='#')
+                                                | 2 
+                                                span.sr-only (current)
+                                            li.page-item
+                                              a.page-link(href='#') 3
+                                            li.page-item
+                                              a.page-link(href='#') Next
+                                    .col-xl-6
+                                      div
+                                        .embed-responsive.embed-responsive-21by9.lg-mt
+                                          iframe(width='560', height='315', src='https://www.youtube.com/embed/AVFqh3SkA4Q', allowfullscreen='')
+                                        .embed-responsive.embed-responsive-21by9
+                                          iframe(width='560', height='315', src='https://www.youtube.com/embed/4iWtjctwAI0', allowfullscreen='')
+                                          
+                                    
+                    // Container-fluid Ends
+                include ../../components/footer
+        include ../../components/footer-files

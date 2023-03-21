@@ -1,0 +1,673 @@
+- var prism                 = true;
+- var chartist              = true;
+- var clipboard             = true;
+- var customcard            = true;
+- var chat_menu             = true;
+- var theme_customizer      = true;
+- var tooltip               = true;
+- var apex                  = true;
+- var material_design_icon  = true;
+- var height_equal          = true;
+- var dashboard_hospital    = true;
+- var counter               = true;
+
+doctype html
+html(lang='en')
+    include ../../components/header-files
+    body
+        include ../../components/loader
+        // page-wrapper Start
+        .page-wrapper
+            include ../../components/header
+            // Page Body Start
+            .page-body-wrapper
+                include ../../components/sidebar
+                include ../../components/chat-sidebar
+                .page-body
+                    .container-fluid
+                        .page-header
+                            .row
+                                .col-lg-6
+                                    h3
+                                      | hospital
+                                    ol.breadcrumb
+                                      li.breadcrumb-item
+                                        a(href='index.html')
+                                         | Home
+                                      li.breadcrumb-item Dashboard
+                                      li.breadcrumb-item.active hospital
+                                .col-lg-6
+                                  include ../../components/bookmark
+                    // Container-fluid starts
+                    .container-fluid
+                      .row
+                        .col-xl-3.xl-50.col-6.hospital-patients
+                          .card.o-hidden
+                            .card-body
+                              .hospital-widgets.media
+                                .hospital-box.light-bg-danger
+                                  img(src='../assets/images/dashboard-hospital/heart.png', alt='')
+                                .media-body
+                                  .hospital-content
+                                    h3.d-inline-block.f-w-600 46
+                                    span.badge.flat-badge-secondary.m-l-10 New
+                                    h6.m-t-5.mb-0.f-w-600 New Patients
+                                  .flowers
+                                    .flower1
+                                    .flower2
+                                    .flower3
+                        .col-xl-3.xl-50.col-6.hospital-patients
+                          .card.o-hidden
+                            .card-body
+                              .hospital-widgets.media
+                                .hospital-box.light-bg-primary
+                                  img(src='../assets/images/dashboard-hospital/brain.png', alt='')
+                                .media-body
+                                  .hospital-content
+                                    h3.d-inline-block.f-w-600 75
+                                    span.badge.flat-badge-primary.m-l-10 OPD
+                                    h6.m-t-5.mb-0.f-w-600 OPD Patients
+                                  .flowers
+                                    .flower1.flower-primary
+                                    .flower2.flower-primary
+                                    .flower3.flower-primary
+                        .col-xl-6.xl-100
+                          .card
+                            .card-body
+                              .row.r-hospital-chart
+                                .col-xl-4.col-md-4.col-sm-6
+                                  .media.hospital-small-chart
+                                    .small-bar
+                                      .small-chart.flot-chart-container
+                                    .media-body
+                                      h3.d-inline-block.f-w-600.m-l-10.mb-0 350
+                                      h6.mb-0.f-w-600.m-l-10 Operations
+                                .col-xl-4.b-l-light.col-md-4.col-sm-6
+                                  .media.hospital-small-chart
+                                    .small-bar
+                                      .small-chart1.flot-chart-container
+                                    .media-body
+                                      h3.d-inline-block.f-w-600.m-l-10.mb-0 450
+                                      h6.mb-0.f-w-600.m-l-10 Visitors
+                                .col-xl-4.b-l-light.col-md-4.col-sm-12.last-card
+                                  .media.hospital-small-chart
+                                    .small-bar
+                                      .small-chart2.flot-chart-container
+                                    .media-body
+                                      h3.d-inline-block.f-w-600.m-l-10.mb-0 1021
+                                      h6.mb-0.f-w-600.m-l-10 Medicine                  
+                        .col-xl-8.xl-100
+                          .card
+                            .card-header
+                              h5 patient in
+                              .card-header-right
+                                ul.list-unstyled.card-option
+                                  li
+                                    i.icofont.icofont-double-left
+                                  li
+                                    i.view-html.fa.fa-code
+                                  li
+                                    i.icofont.icofont-maximize.full-card
+                                  li
+                                    i.icofont.icofont-minus.minimize-card
+                                  li
+                                    i.icofont.icofont-refresh.reload-card
+                                  li
+                                    i.icofont.icofont-error.close-card
+                            .card-body
+                              .apex-chart-container.chart-data
+                                #column-chart
+                              .code-box-copy
+                                      button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head', title='Copy')
+                                        i.icofont.icofont-copy-alt
+                                      pre
+                                        code.language-html#example-head
+                                            | &lt;!-- Cod Box Copy begin --&gt;
+                                            | &lt;div class="apex-chart-container chart-data"&gt;
+                                            |   &lt;div id="column-chart"&gt;&lt;/div&gt;
+                                            | &lt;/div&gt;
+                                            |  &lt;!-- Cod Box Copy end --&gt;    
+                        .col-xl-4.xl-100
+                          .card.bg-gradient-primary.hospital-bg
+                            .card-header
+                              h5 Hospital Finances
+                            .card-body.p-0
+                              .hospital-chartist
+                                .hospital-curve
+                                .hospital-pin
+                                  img(src='../assets/images/dashboard-hospital/hospital-pill.png', alt='')
+                                  .hospital-profit
+                                    i.fa.fa-circle-o.p-r-10
+                                    span.pr-4 Expensens  
+                                    i.fa.fa-database.p-r-10
+                                    span.p-r-10 profit  
+                        .col-xl-4.xl-50
+                          .card.height-equal
+                            .card-header
+                              h5 Doctor list
+                              .card-header-right
+                                ul.list-unstyled.card-option
+                                  li
+                                    i.icofont.icofont-double-left
+                                  li
+                                    i.view-html.fa.fa-code
+                                  li
+                                    i.icofont.icofont-maximize.full-card
+                                  li
+                                    i.icofont.icofont-minus.minimize-card
+                                  li
+                                    i.icofont.icofont-refresh.reload-card
+                                  li
+                                    i.icofont.icofont-error.close-card
+                            .card-body.p-0
+                              .sales-product-table.crypto-table-market.sass-table.table-responsive
+                                table.table.table-bordernone
+                                  tbody
+                                    tr
+                                      td
+                                        .media
+                                          img.img-fluid.rounded-circle.img-40.mr-3(src='../assets/images/dashboard-hospital/d1.jpg', alt='')
+                                          .media-body
+                                            span.f-w-600.d-block Ossim Keter
+                                      td.text-center
+                                        span.f-w-600.d-block Dental
+                                      td
+                                        button.btn.btn-outline-light.txt-dark(type='button') Details
+                                    tr
+                                      td
+                                        .media
+                                          img.img-fluid.rounded-circle.img-40.mr-3(src='../assets/images/dashboard-hospital/d2.jpg', alt='')
+                                          .media-body
+                                            span.f-w-600.d-block Mren Loren 
+                                      td.text-center
+                                        span.f-w-600.d-block Cardiologist
+                                      td
+                                        button.btn.btn-outline-light.txt-dark(type='button') Details
+                                    tr
+                                      td
+                                        .media
+                                          img.img-fluid.rounded-circle.img-40.mr-3(src='../assets/images/dashboard-hospital/d3.jpg', alt='')
+                                          .media-body
+                                            span.f-w-600.d-block Fran Loren
+                                      td.text-center
+                                        span.f-w-600.d-block Hospitalist
+                                      td
+                                        button.btn.btn-outline-light.txt-dark(type='button') Details
+                                    tr
+                                      td
+                                        .media
+                                          img.img-fluid.rounded-circle.img-40.mr-3(src='../assets/images/dashboard-hospital/d4.jpg', alt='')
+                                          .media-body
+                                            span.f-w-600.d-block Fran Loren
+                                      td.text-center
+                                        span.f-w-600.d-block Surgeon
+                                      td
+                                        button.btn.btn-outline-light.txt-dark(type='button') Details
+                                    tr
+                                      td
+                                        .media
+                                          img.img-fluid.rounded-circle.img-40.mr-3(src='../assets/images/dashboard-hospital/d5.jpg', alt='')
+                                          .media-body
+                                            span.f-w-600.d-block Loie Fenter
+                                      td.text-center
+                                        span.f-w-600.d-block oncologist
+                                      td
+                                       button.btn.btn-outline-light.txt-dark(type='button') Details
+                              .code-box-copy
+                                button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head1', title='Copy')
+                                  i.icofont.icofont-copy-alt
+                                pre
+                                  code.language-html#example-head1
+                                      | &lt;!-- Cod Box Copy begin --&gt;
+                                      | &lt;div class="sales-product-table crypto-table-market sass-table table-responsive"&gt;
+                                      |   &lt;table class="table table-bordernone"&gt;
+                                      |     &lt;tbody&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;
+                                      |           &lt;div class="media"&gt;&lt;img class="img-fluid rounded-circle img-40 mr-3" src="../assets/images/dashboard-hospital/d1.jpg" alt=""&gt;
+                                      |             &lt;div class="media-body"&gt;&lt;span class="f-w-600 d-block"&gt;Ossim Keter&lt;/span&gt;&lt;/div&gt;
+                                      |           &lt;/div&gt;
+                                      |         &lt;/td&gt;
+                                      |         &lt;td class="text-center"&gt;&lt;span class="f-w-600 d-block"&gt;Dental&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;
+                                      |           &lt;button class="btn btn-outline-light txt-dark" type="button"&gt;Details&lt;/button&gt;
+                                      |         &lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;
+                                      |           &lt;div class="media"&gt;&lt;img class="img-fluid rounded-circle img-40 mr-3" src="../assets/images/dashboard-hospital/d2.jpg" alt=""&gt;
+                                      |             &lt;div class="media-body"&gt;&lt;span class="f-w-600 d-block"&gt;Mren Loren &lt;/span&gt;&lt;/div&gt;
+                                      |           &lt;/div&gt;
+                                      |         &lt;/td&gt;
+                                      |         &lt;td class="text-center"&gt;&lt;span class="f-w-600 d-block"&gt;Cardiologist&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;
+                                      |           &lt;button class="btn btn-outline-light txt-dark" type="button"&gt;Details&lt;/button&gt;
+                                      |         &lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;
+                                      |           &lt;div class="media"&gt;&lt;img class="img-fluid rounded-circle img-40 mr-3" src="../assets/images/dashboard-hospital/d3.jpg" alt=""&gt;
+                                      |             &lt;div class="media-body"&gt;&lt;span class="f-w-600 d-block"&gt;Fran Loren&lt;/span&gt;&lt;/div&gt;
+                                      |           &lt;/div&gt;
+                                      |         &lt;/td&gt;
+                                      |         &lt;td class="text-center"&gt;&lt;span class="f-w-600 d-block"&gt;Hospitalist&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;
+                                      |           &lt;button class="btn btn-outline-light txt-dark" type="button"&gt;Details&lt;/button&gt;
+                                      |         &lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;
+                                      |           &lt;div class="media"&gt;&lt;img class="img-fluid rounded-circle img-40 mr-3" src="../assets/images/dashboard-hospital/d4.jpg" alt=""&gt;
+                                      |             &lt;div class="media-body"&gt;&lt;span class="f-w-600 d-block"&gt;Fran Loren&lt;/span&gt;&lt;/div&gt;
+                                      |           &lt;/div&gt;
+                                      |         &lt;/td&gt;
+                                      |         &lt;td class="text-center"&gt;&lt;span class="f-w-600 d-block"&gt;Surgeon&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;
+                                      |           &lt;button class="btn btn-outline-light txt-dark" type="button"&gt;Details&lt;/button&gt;
+                                      |         &lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;
+                                      |           &lt;div class="media"&gt;&lt;img class="img-fluid rounded-circle img-40 mr-3" src="../assets/images/dashboard-hospital/d5.jpg" alt=""&gt;
+                                      |             &lt;div class="media-body"&gt;&lt;span class="f-w-600 d-block"&gt;Loie Fenter&lt;/span&gt;&lt;/div&gt;
+                                      |           &lt;/div&gt;
+                                      |         &lt;/td&gt;
+                                      |         &lt;td class="text-center"&gt;&lt;span class="f-w-600 d-block"&gt;oncologist&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;
+                                      |           &lt;button class="btn btn-outline-light txt-dark" type="button"&gt;Details&lt;/button&gt;
+                                      |         &lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |     &lt;/tbody&gt;
+                                      |   &lt;/table&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;!-- Cod Box Copy end --&gt;
+                        .col-xl-4.xl-50
+                          .card.crm-user-card.hospital-user.height-equal
+                            .card-header
+                              .crm-user-top-content.text-center
+                                img.img-fluid.rounded-circle(src='../assets/images/dashboard-hospital/p1.jpg', alt='')
+                                h4 
+                                  span.mr-2
+                                    i.f-20.font-secondary.mdi.mdi-cards-heart
+                                  | Henry Ketrol
+                                span.badge.flat-badge-secondary Specialist
+                            .card-body
+                              .row
+                                .col-6
+                                  .apex-chart-small
+                                    #hospital-area-chart-small
+                                .col-6
+                                  h2.counter 414
+                                  h4 operation
+                            .card-footer.p-0
+                              ul
+                                li
+                                  span Specialist List
+                                li
+                                  span Message 
+                        .col-xl-4.xl-50.box-col-6
+                          .card.height-equal
+                            .card-header
+                              h5 Hospital Activities
+                              .card-header-right
+                                ul.list-unstyled.card-option
+                                  li
+                                    i.icofont.icofont-double-left
+                                  li
+                                    i.view-html.fa.fa-code
+                                  li
+                                    i.icofont.icofont-maximize.full-card
+                                  li
+                                    i.icofont.icofont-minus.minimize-card
+                                  li
+                                    i.icofont.icofont-refresh.reload-card
+                                  li
+                                    i.icofont.icofont-error.close-card
+                            .card-body.pb-0
+                              .timeline-circle.hospital-timeline
+                                .media.mt-0
+                                  .timeline-background
+                                    .timeline-dot-primary
+                                    .timeline-line 
+                                  .media-body
+                                    p 20-4-2019 - Today
+                                    h6 Using Laser Treatment to Help
+                                    small.mb-2.d-block 
+                                      span.font-primary Elisse Joson San 
+                                      | Francisco, CA
+                                    p.paragraph-font.f-12 web by far While that's mock-ups and this is politics, are they really so different? I think the only card she has is the Lorem card.
+                                    img.p-r-10(src='../assets/images/dashboard-hospital/hp1.jpg', alt='')
+                                    img.p-r-10(src='../assets/images/dashboard-hospital/hp2.jpg', alt='')
+                                .media.mt-0
+                                  .timeline-background
+                                    .timeline-dot-secondary
+                                  .media-body
+                                    p 19-04-2019 - Yesterday
+                                    h6 A Brief History Of Anesthetics
+                                    small.mb-2.d-block 
+                                      span.font-secondary Katherine Lumaad
+                                      |  Oakland, CA
+                              .code-box-copy
+                                button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head2', title='Copy')
+                                  i.icofont.icofont-copy-alt
+                                pre
+                                  code.language-html#example-head2
+                                      | &lt;!-- Cod Box Copy begin --&gt;
+                                      | &lt;div class="timeline-circle hospital-timeline"&gt;
+                                      |   &lt;div class="media mt-0"&gt;
+                                      |     &lt;div class="timeline-background"&gt;
+                                      |       &lt;div class="timeline-dot-primary"&gt;&lt;/div&gt;
+                                      |       &lt;div class="timeline-line"&gt; &lt;/div&gt;
+                                      |     &lt;/div&gt;
+                                      |     &lt;div class="media-body"&gt;
+                                      |       &lt;p&gt;20-4-2019 - Today&lt;/p&gt;
+                                      |       &lt;h6&gt;Using Laser Treatment to Help&lt;/h6&gt;
+                                      |       &lt;small class="mb-2 d-block"&gt; 
+                                      |         &lt;span class="font-primary"&gt;Elisse Joson San &lt;/span&gt;Francisco, CA
+                                      |       &lt;/small&gt;
+                                      |       &lt;p class="paragraph-font f-12"&gt;web by far While that's mock-ups and this is politics, are they really so different? I think the only card she has is the Lorem card.&lt;/p&gt;
+                                      |       &lt;img class="p-r-10" src="../assets/images/dashboard-hospital/hp1.jpg" alt=""&gt;
+                                      |       &lt;img class="p-r-10" src="../assets/images/dashboard-hospital/hp2.jpg" alt=""&gt;
+                                      |     &lt;/div&gt;
+                                      |   &lt;/div&gt;
+                                      |   &lt;div class="media mt-0"&gt;
+                                      |     &lt;div class="timeline-background"&gt;
+                                      |       &lt;div class="timeline-dot-secondary"&gt;&lt;/div&gt;
+                                      |     &lt;/div&gt;
+                                      |     &lt;div class="media-body"&gt;
+                                      |       &lt;p&gt;19-04-2019 - Yesterday&lt;/p&gt;
+                                      |       &lt;h6&gt;A Brief History Of Anesthetics&lt;/h6&gt;&lt;small class="mb-2 d-block"&gt; &lt;span class="font-secondary"&gt;Katherine Lumaad&lt;/span&gt; Oakland, CA&lt;/small&gt;
+                                      |     &lt;/div&gt;
+                                      |   &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;!-- Cod Box Copy end --&gt;
+                        .col-xl-7.xl-50.box-col-12
+                            .card
+                              .card-header
+                                h5 Booked Appointment
+                                .card-header-right
+                                  ul.list-unstyled.card-option
+                                    li
+                                      i.icofont.icofont-double-left
+                                    li
+                                      i.view-html.fa.fa-code
+                                    li
+                                      i.icofont.icofont-maximize.full-card
+                                    li
+                                      i.icofont.icofont-minus.minimize-card
+                                    li
+                                      i.icofont.icofont-refresh.reload-card
+                                    li
+                                      i.icofont.icofont-error.close-card
+                              .card-body.p-0
+                                .sales-product-table.table-responsive.booked-table
+                                  table.table.table-bordernone.text-center
+                                    thead
+                                      tr
+                                        th(scope='col') Number
+                                        th(scope='col') Pateint Name
+                                        th(scope='col') Assigned Doctor
+                                        th(scope='col') Date
+                                        th(scope='col') Time
+                                        th(scope='col') Action
+                                    tbody
+                                      tr
+                                        td 01
+                                        td
+                                          .d-inline-block.align-middle
+                                            .d-inline-block
+                                              span.f-w-600 Nick Stone
+                                        td
+                                          span Dr.oliver
+                                        td
+                                          span 16/08/2019
+                                        td
+                                          span 10:23
+                                        td
+                                          span.badge.badge-pill.pill-badge-secondary Action
+                                      tr
+                                        td 02
+                                        td
+                                          .d-inline-block.align-middle
+                                            .d-inline-block
+                                              span.f-w-600 Milano Esco
+                                        td
+                                          span Dr.George
+                                        td
+                                          span 22/08/2019
+                                        td
+                                          span 1:25
+                                        td
+                                          span.badge.badge-pill.pill-badge-success Action
+                                      tr
+                                        td 03
+                                        td
+                                          .d-inline-block.align-middle
+                                            .d-inline-block
+                                              span.f-w-600 Wiltor Noice
+                                        td
+                                          span Dr.jack
+                                        td
+                                          span 5/09/2019
+                                        td
+                                          span 5:50
+                                        td
+                                          span.badge.badge-pill.pill-badge-warning Action
+                                      tr
+                                        td 04
+                                        td
+                                          .d-inline-block.align-middle
+                                            .d-inline-block
+                                              span.f-w-600 Anna Strong
+                                        td
+                                          span Dr.Noah
+                                        td
+                                          span 20/02/2019
+                                        td
+                                          span 10:50
+                                        td
+                                          span.badge.badge-pill.pill-badge-primary Action
+                                .code-box-copy
+                                      button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head3', title='Copy')
+                                        i.icofont.icofont-copy-alt
+                                      pre
+                                        code.language-html#example-head3
+                                            | &lt;!-- Cod Box Copy begin --&gt;
+                                            | &lt;div class="sales-product-table table-responsive booked-table"&gt;
+                                            |   &lt;table class="table table-bordernone text-center"&gt;
+                                            |     &lt;thead&gt;
+                                            |       &lt;tr&gt;
+                                            |         &lt;th scope="col"&gt;Number&lt;/th&gt;
+                                            |         &lt;th scope="col"&gt;Pateint Name&lt;/th&gt;
+                                            |         &lt;th scope="col"&gt;Assigned Doctor&lt;/th&gt;
+                                            |         &lt;th scope="col"&gt;Date&lt;/th&gt;
+                                            |         &lt;th scope="col"&gt;Time&lt;/th&gt;
+                                            |         &lt;th scope="col"&gt;Action&lt;/th&gt;
+                                            |       &lt;/tr&gt;
+                                            |     &lt;/thead&gt;
+                                            |     &lt;tbody&gt;
+                                            |       &lt;tr&gt;
+                                            |         &lt;td&gt;01&lt;/td&gt;
+                                            |         &lt;td&gt;
+                                            |           &lt;div class="d-inline-block align-middle"&gt;
+                                            |             &lt;div class="d-inline-block"&gt;&lt;span class="f-w-600"&gt;Nick Stone&lt;/span&gt;&lt;/div&gt;
+                                            |           &lt;/div&gt;
+                                            |         &lt;/td&gt;
+                                            |         &lt;td&gt;&lt;span&gt;Dr.oliver&lt;/span&gt;&lt;/td&gt;
+                                            |         &lt;td&gt;&lt;span&gt;16/08/2019&lt;/span&gt;&lt;/td&gt;
+                                            |         &lt;td&gt;&lt;span&gt;10:23&lt;/span&gt;&lt;/td&gt;
+                                            |         &lt;td&gt;&lt;span class="badge badge-pill pill-badge-secondary"&gt;Action&lt;/span&gt;&lt;/td&gt;
+                                            |       &lt;/tr&gt;
+                                            |       &lt;tr&gt;
+                                            |         &lt;td&gt;02&lt;/td&gt;
+                                            |         &lt;td&gt;
+                                            |           &lt;div class="d-inline-block align-middle"&gt;
+                                            |             &lt;div class="d-inline-block"&gt;&lt;span class="f-w-600"&gt;Milano Esco&lt;/span&gt;&lt;/div&gt;
+                                            |           &lt;/div&gt;
+                                            |         &lt;/td&gt;
+                                            |         &lt;td&gt;&lt;span&gt;Dr.George&lt;/span&gt;&lt;/td&gt;
+                                            |         &lt;td&gt;&lt;span&gt;22/08/2019&lt;/span&gt;&lt;/td&gt;
+                                            |         &lt;td&gt;&lt;span&gt;1:25&lt;/span&gt;&lt;/td&gt;
+                                            |         &lt;td&gt;&lt;span class="badge badge-pill pill-badge-success"&gt;Action&lt;/span&gt;&lt;/td&gt;
+                                            |       &lt;/tr&gt;
+                                            |       &lt;tr&gt;
+                                            |         &lt;td&gt;03&lt;/td&gt;
+                                            |         &lt;td&gt;
+                                            |           &lt;div class="d-inline-block align-middle"&gt;
+                                            |             &lt;div class="d-inline-block"&gt;&lt;span class="f-w-600"&gt;Wiltor Noice&lt;/span&gt;&lt;/div&gt;
+                                            |           &lt;/div&gt;
+                                            |         &lt;/td&gt;
+                                            |         &lt;td&gt;&lt;span&gt;Dr.jack&lt;/span&gt;&lt;/td&gt;
+                                            |         &lt;td&gt;&lt;span&gt;5/09/2019&lt;/span&gt;&lt;/td&gt;
+                                            |         &lt;td&gt;&lt;span&gt;5:50&lt;/span&gt;&lt;/td&gt;
+                                            |         &lt;td&gt;&lt;span class="badge badge-pill pill-badge-warning"&gt;Action&lt;/span&gt;&lt;/td&gt;
+                                            |       &lt;/tr&gt;
+                                            |       &lt;tr&gt;
+                                            |         &lt;td&gt;04&lt;/td&gt;
+                                            |         &lt;td&gt;
+                                            |           &lt;div class="d-inline-block align-middle"&gt;
+                                            |             &lt;div class="d-inline-block"&gt;&lt;span class="f-w-600"&gt;Anna Strong&lt;/span&gt;&lt;/div&gt;
+                                            |           &lt;/div&gt;
+                                            |         &lt;/td&gt;
+                                            |         &lt;td&gt;&lt;span&gt;Dr.Noah&lt;/span&gt;&lt;/td&gt;
+                                            |         &lt;td&gt;&lt;span&gt;20/02/2019&lt;/span&gt;&lt;/td&gt;
+                                            |         &lt;td&gt;&lt;span&gt;10:50&lt;/span&gt;&lt;/td&gt;
+                                            |         &lt;td&gt;&lt;span class="badge badge-pill pill-badge-primary"&gt;Action&lt;/span&gt;&lt;/td&gt;
+                                            |       &lt;/tr&gt;
+                                            |     &lt;/tbody&gt;
+                                            |   &lt;/table&gt;
+                                            | &lt;/div&gt;
+                                            | &lt;!-- Cod Box Copy end --&gt;
+                        .col-xl-5.xl-100.box-col-12
+                            .card
+                              .card-header
+                                h5 Admit patient list
+                                .card-header-right
+                                  ul.list-unstyled.card-option
+                                    li
+                                      i.icofont.icofont-double-left
+                                    li
+                                      i.view-html.fa.fa-code
+                                    li
+                                      i.icofont.icofont-maximize.full-card
+                                    li
+                                      i.icofont.icofont-minus.minimize-card
+                                    li
+                                      i.icofont.icofont-refresh.reload-card
+                                    li
+                                      i.icofont.icofont-error.close-card
+                              .card-body.p-0
+                                .sales-product-table.table-responsive.hospital-table
+                                  table.table.table-bordernone.text-center
+                                    thead
+                                      tr
+                                        th(scope='col') Pateint Name
+                                        th(scope='col') Diseases
+                                        th(scope='col') Admit Date
+                                        th(scope='col') Edit
+                                    tbody
+                                      tr
+                                        td
+                                          h6.f-w-600.mb-0 Nick Stone
+                                        td
+                                          span.hospital-diseases
+                                            span.circle-small-primary 
+                                            | INFLUENZA
+                                        td
+                                          span 16/08/2019
+                                        td
+                                          span.icofont.icofont-ui-delete
+                                      tr
+                                        td
+                                          h6.f-w-600.mb-0 Milano Esco
+                                        td
+                                          span.hospital-diseases
+                                            span.circle-small-warning
+                                            | TYPHOID
+                                        td
+                                          span 22/08/2019
+                                        td
+                                          span.icofont.icofont-ui-delete
+                                      tr
+                                        td
+                                          h6.f-w-600.mb-0 Wiltor Noice
+                                        td
+                                          span.hospital-diseases
+                                            span.circle-small-danger
+                                            | JAUNDICE
+                                        td
+                                          span 05/09/2019
+                                        td
+                                          span.icofont.icofont-ui-delete
+                                      tr
+                                        td
+                                          h6.f-w-600.mb-0 Anna Strong
+                                        td
+                                          span.hospital-diseases
+                                            span.circle-small-success
+                                            | HEPATITIS
+                                        td
+                                          span 20/02/2019
+                                        td
+                                          span.icofont.icofont-ui-delete
+                                .code-box-copy
+                                      button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head4', title='Copy')
+                                        i.icofont.icofont-copy-alt
+                                      pre
+                                        code.language-html#example-head4
+                                            | &lt;!-- Cod Box Copy begin --&gt;
+                                            | &lt;div class="sales-product-table table-responsive hospital-table custom-scrollbar"&gt;
+                                            |   &lt;table class="table table-bordernone text-center"&gt;
+                                            |     &lt;thead&gt;
+                                            |       &lt;tr&gt;
+                                            |         &lt;th scope="col"&gt;Pateint Name&lt;/th&gt;
+                                            |         &lt;th scope="col"&gt;Diseases&lt;/th&gt;
+                                            |         &lt;th scope="col"&gt;Admit Date&lt;/th&gt;
+                                            |         &lt;th scope="col"&gt;Edit&lt;/th&gt;
+                                            |       &lt;/tr&gt;
+                                            |     &lt;/thead&gt;
+                                            |     &lt;tbody&gt;
+                                            |       &lt;tr&gt;
+                                            |         &lt;td&gt;
+                                            |           &lt;h6 class="f-w-600 mb-0"&gt;Nick Stone&lt;/h6&gt;
+                                            |         &lt;/td&gt;
+                                            |         &lt;td&gt;&lt;span class="hospital-diseases"&gt;
+                                            |           &lt;span class="circle-small-primary"&gt; &lt;/span&gt;INFLUENZA&lt;/span&gt;&lt;/td&gt;
+                                            |         &lt;td&gt;&lt;span&gt;16/08/2019&lt;/span&gt;&lt;/td&gt;
+                                            |         &lt;td&gt;&lt;span class="icofont icofont-ui-delete"&gt;&lt;/span&gt;&lt;/td&gt;
+                                            |       &lt;/tr&gt;
+                                            |       &lt;tr&gt;
+                                            |         &lt;td&gt;
+                                            |           &lt;h6 class="f-w-600 mb-0"&gt;Milano Esco&lt;/h6&gt;
+                                            |         &lt;/td&gt;
+                                            |         &lt;td&gt;&lt;span class="hospital-diseases"&gt;
+                                            |           &lt;span class="circle-small-warning"&gt;&lt;/span&gt;TYPHOID&lt;/span&gt;&lt;/td&gt;
+                                            |         &lt;td&gt;&lt;span&gt;22/08/2019&lt;/span&gt;&lt;/td&gt;
+                                            |         &lt;td&gt;&lt;span class="icofont icofont-ui-delete"&gt;&lt;/span&gt;&lt;/td&gt;
+                                            |       &lt;/tr&gt;
+                                            |       &lt;tr&gt;
+                                            |         &lt;td&gt;
+                                            |           &lt;h6 class="f-w-600 mb-0"&gt;Wiltor Noice&lt;/h6&gt;
+                                            |         &lt;/td&gt;
+                                            |         &lt;td&gt;&lt;span class="hospital-diseases"&gt;
+                                            |           &lt;span class="circle-small-danger"&gt;&lt;/span&gt;JAUNDICE&lt;/span&gt;&lt;/td&gt;
+                                            |         &lt;td&gt;&lt;span&gt;05/09/2019&lt;/span&gt;&lt;/td&gt;
+                                            |         &lt;td&gt;&lt;span class="icofont icofont-ui-delete"&gt;&lt;/span&gt;&lt;/td&gt;
+                                            |       &lt;/tr&gt;
+                                            |       &lt;tr&gt;
+                                            |         &lt;td&gt;
+                                            |           &lt;h6 class="f-w-600 mb-0"&gt;Anna Strong&lt;/h6&gt;
+                                            |         &lt;/td&gt;
+                                            |         &lt;td&gt;&lt;span class="hospital-diseases"&gt;
+                                            |           &lt;span class="circle-small-success"&gt;&lt;/span&gt;HEPATITIS&lt;/span&gt;&lt;/td&gt;
+                                            |         &lt;td&gt;&lt;span&gt;20/02/2019&lt;/span&gt;&lt;/td&gt;
+                                            |         &lt;td&gt;&lt;span class="icofont icofont-ui-delete"&gt;&lt;/span&gt;&lt;/td&gt;
+                                            |       &lt;/tr&gt;
+                                            |     &lt;/tbody&gt;
+                                            |   &lt;/table&gt;
+                                            | &lt;/div&gt;
+                                            | &lt;!-- Cod Box Copy end --&gt;                                                                 
+                    // Container-fluid Ends
+                include ../../components/footer
+        include ../../components/footer-files
+

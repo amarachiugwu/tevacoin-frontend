@@ -1,5 +1,6 @@
 import React from 'react';
 import $ from 'jquery';
+import {ConnectButton} from '@rainbow-me/rainbowkit';
 
 
 export default function HeaderComponent() {
@@ -15,7 +16,8 @@ export default function HeaderComponent() {
           <div className="main-header-left d-lg-none">
             <div className="logo-wrapper"><a href="index.html"><img src="../assets/images/creative-logo1.png" alt=""/></a></div>
           </div>
-          <div className="mobile-sidebar d-block">
+          
+          <div className="mobile-sidebar d-block" style={{float:'left'}}>
             <div className="media-body text-right switch-sm">
               <label className="switch">
                 <input  type="checkbox" id="sidebar-toggle" onClick={() => SideBarToggle() } />
@@ -23,11 +25,16 @@ export default function HeaderComponent() {
               </label>
             </div>
           </div>
-
-          
-          <div className="nav-right col pull-right right-menu">
-           
+            
+          <div className="nav-right col pull-right right-menu" style={{float:'left'}}>
+            <ConnectButton 
+              label="Connect"
+              accountStatus={"avatar"} // full, address, or avatar
+              chainStatus={"icon"} // full, icon, or none
+              showBalance={false} // true or false
+            />
           </div>
+          
           
         </div>
     </div>

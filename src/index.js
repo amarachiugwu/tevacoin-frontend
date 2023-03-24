@@ -11,21 +11,25 @@ import {
   chain,
 } from 'wagmi'
 
-// import { alchemyProvider } from 'wagmi/providers/alchemy'
-// import { infuraProvider } from 'wagmi/providers/infura'
+import { alchemyProvider } from 'wagmi/providers/alchemy'
+import { infuraProvider } from 'wagmi/providers/infura'
 import { publicProvider } from 'wagmi/providers/public'
+// import { jsonRpcProvider } from "wagmi/providers/jsonRpc"
+import env from "react-dotenv";
+// console.log(env)
 
 const { chains, provider, webSocketProvider } = configureChains(
   // chains we support 
   [chain.mainnet, chain.goerli],
   [
-  // alchemyProvider({apiKey: "fAO9lKh5UMDFsEW1eyT_AbY7kcppthXn"}), 
-  // infuraProvider({apiKey: "e92c38757159497d97aad034c8e59232"}), 
+  alchemyProvider({apiKey: env.ALCHEMY_GOERLI_API_KEY}), 
+  infuraProvider({apiKey: env.INFURA_API_KEY}), 
   publicProvider()],
+ 
 );
 
 const {connectors} = getDefaultWallets({
-  appName: "EventFlow",
+  appName: "Teva Coin",
   chains,
 });
 

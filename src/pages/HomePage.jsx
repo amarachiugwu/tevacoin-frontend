@@ -8,7 +8,7 @@ import SidebarComponent from '../components/SidebarComponent'
 import { TrendingUp } from 'react-feather';
 import { ThreeDots } from 'react-loader-spinner'
 
-import { TevaSwapContract, TevaPrice } from "../constants";
+import { TevaSwapContract, TevaPrice, minPurchaseEthAmt } from "../constants";
 import { useAccount, useContractWrite, useContractRead, usePrepareContractWrite, useWaitForTransaction } from "wagmi";
 import TevaSwap from "../json/TevaSwap.json"
 import { ethers } from "ethers";
@@ -78,7 +78,7 @@ function HomePage() {
         buyerTevaPurchaseQty
       ],
       overrides: {
-        value: ethers.utils.parseEther("0.1")
+        value: ethers.utils.parseUnits(ethers.utils.formatEther((ethVal * 10 ** 18).toString()))
     }
   })
   
@@ -104,7 +104,6 @@ function HomePage() {
       isError: iswaitError,
   } = useContractWrite(config)
 
-
   const {data: useWaitForTransactionData, isLoading: isWaitLoading} = useWaitForTransaction({
     hash: useContractWriteData?.hash,
     onSuccess(){
@@ -116,7 +115,6 @@ function HomePage() {
     }
 
 })
-
 
   const onSubmit = async(values, { setSubmitting, resetForm }) => {
 
@@ -131,38 +129,32 @@ function HomePage() {
     // console.log("getUserEthDeposit", getUserEthDeposit);
     // console.log("getUserTevaBalance", getUserTevaBalance);
 
-    // if (buyerTevaPurchaseQty !== buyerPrevTevaPurchaseQty) {
-      console.log(buyerPrevTevaPurchaseQty)
-      console.log(buyerTevaPurchaseQty)
+
+    if (buyerTevaPurchaseQty !== buyerPrevTevaPurchaseQty) {
+
       if (ethVal !== '' ){
 
         getEthToUsdVal()
 
-
         if (ethToUsdVal !== '') {
           const tevaVal = getEthToTevaValue((ethToUsdVal * ethVal))
-          console.log(tevaVal)
-          console.log(ethToUsdVal)
           setBuyerPrevTevaPurchaseQty(buyerTevaPurchaseQty)
           setBuyerTevaPurchaseQty(tevaVal)
 
           if (buyerTevaPurchaseQty) {
-            console.log(buyerPrevTevaPurchaseQty)
-            console.log(buyerTevaPurchaseQty)
             buyTevaWithEth?.()
           }
         }
 
       }
-    // }
-
+    }
 
     if (getUserEthDeposit) {
       setUserEthDeposit(ethers.utils.formatEther(getUserEthDeposit))
     }
 
     if (getUserTevaBalance) {
-      setUserTevaBalance(ethers.utils.commify(ethers.utils.formatEther(getUserTevaBalance)))
+      setUserTevaBalance(ethers.utils.commify(getUserTevaBalance.toString()))
     }
 
   }, [ethVal, ethToUsdVal, buyerTevaPurchaseQty, userEthDeposit, userTevaBalance])
@@ -202,7 +194,7 @@ function HomePage() {
                                       <div className="contact-form card-body">
                                       
                                           <div className="input-group">
-                                              <Field type="text" name="ETHAmount" id="ETHAmount" className="form-control" placeholder="eg : 1" />
+                                              <Field type="text" name="ETHAmount" id="ETHAmount" className="form-control" placeholder={`min amount : ${minPurchaseEthAmt} eth`} />
                                               
                                               <button type="submit" className="btn btn-primary-gradien" disabled={isSubmitting || isWriteLoading || isWaitLoading} >
                                           {(isWriteLoading || isWaitLoading) ? "Loading..." : "Buy TEV"}</button>
@@ -258,7 +250,7 @@ function HomePage() {
                                                         />
                                                       ) : (
                                                         <>
-                                                          <span className="counter">{isConnected  ? userEthDeposit : '-.--' } BTC</span>
+                                                          <span className="counter">{isConnected  ? userEthDeposit : '-.--' } ETH</span>
                                                           <span><TrendingUp /></span>
                                                         </>
                                                       )}

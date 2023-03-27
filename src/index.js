@@ -8,8 +8,9 @@ import {
   WagmiConfig,
   createClient,
   configureChains,
-  chain,
 } from 'wagmi'
+import { mainnet, goerli } from 'wagmi/chains';
+
 
 import { alchemyProvider } from 'wagmi/providers/alchemy'
 import { infuraProvider } from 'wagmi/providers/infura'
@@ -20,7 +21,7 @@ import env from "react-dotenv";
 
 const { chains, provider, webSocketProvider } = configureChains(
   // chains we support 
-  [chain.mainnet, chain.goerli],
+  [mainnet, goerli],
   [
   alchemyProvider({apiKey: env.ALCHEMY_GOERLI_API_KEY}), 
   infuraProvider({apiKey: env.INFURA_API_KEY}), 

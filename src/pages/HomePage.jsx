@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
@@ -6,22 +6,28 @@ import FooterComponent from '../components/FooterComponent'
 import HeaderComponent from '../components/HeaderComponent'
 import SidebarComponent from '../components/SidebarComponent'
 import { TrendingUp } from 'react-feather';
+import { ThreeDots } from 'react-loader-spinner'
 
-import { TevaSwapContract } from "../constants";
-import { useAccount, useContractWrite, usePrepareContractWrite, useWaitForTransaction } from "wagmi";
+import { TevaSwapContract, TevaPrice } from "../constants";
+import { useAccount, useContractWrite, useContractRead, usePrepareContractWrite, useWaitForTransaction } from "wagmi";
 import TevaSwap from "../json/TevaSwap.json"
-import { utils } from "ethers";
+import { ethers } from "ethers";
 
 import { toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 
 
 function HomePage() {
+  
+  const [ethVal, setEthVal] = useState('')
+  const [ethToUsdVal, setEthToUsdVal] = useState('')
+  const [buyerTevaPurchaseQty, setBuyerTevaPurchaseQty] = useState('');
+  const [buyerPrevTevaPurchaseQty, setBuyerPrevTevaPurchaseQty] = useState();
+  const [userTevaBalance, setUserTevaBalance] = useState('')
+  const [userEthDeposit, setUserEthDeposit] = useState()
 
-  const [buyerTevaPurchaseQty, setBuyerTevaPurchaseQty] = useState(0);
-  const [buyerEthToWeiVal, setBuyerEthToWeiVal] = useState(0)
 
-  const {userAddress, isConnected } = useAccount();
+  const { address: userAddress, isConnected } = useAccount();
   
   const initialValues = {
     ETHAmount: '',
@@ -39,27 +45,22 @@ function HomePage() {
       ),
   });
 
-  const getEthToWeiValue = (ethVal) => {
-    var weiVal = ethVal;
-    weiVal =  parseFloat(weiVal.value);
-    weiVal = weiVal * 1000000000000000000;
-    return weiVal.toString();
+  const getEthToTevaValue = (buyerEthToUsdVal) => {
+    let result = parseInt(buyerEthToUsdVal / TevaPrice);
+    return result.toString();
   }
 
-  const getEthToUsdVal = (setSubmitting, resetForm) => {
+  const getEthToUsdVal = () => {
     axios
     .get("https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd")
     .then(res => { 
-        console.log(res.data);
 
         if(res.data){
-          setSubmitting(false);
-          resetForm();
-          console.log(res.data.ethereum.usd);
-          return res.data.ethereum.usd
+          const usdVal = res.data.ethereum.usd;
+          setEthToUsdVal(usdVal)
+          return usdVal
       }else{
           console.log(res.data);
-          setSubmitting(false);
           return false
       }
         
@@ -67,12 +68,6 @@ function HomePage() {
     .catch(err => {
         console.error(err);
     });
-  }
-
-  const getEthToTevaValue = (buyerEthToUsdVal) => {
-    let result = parseInt(buyerEthToUsdVal / 0.3);
-    // return result.toString();
-    return result;
   }
 
   const { config, error, isError } = usePrepareContractWrite({
@@ -83,22 +78,35 @@ function HomePage() {
         buyerTevaPurchaseQty
       ],
       overrides: {
-        from: userAddress,
-        value: buyerEthToWeiVal.toString()
+        value: ethers.utils.parseEther("0.1")
     }
+  })
+  
+  const { data :getUserEthDeposit } = useContractRead({
+    address: TevaSwapContract,
+    abi: TevaSwap.abi,
+    functionName: 'balances',
+    args: [userAddress],
+  })
+
+  const { data :getUserTevaBalance } = useContractRead({
+    address: TevaSwapContract,
+    abi: TevaSwap.abi,
+    functionName: 'balanceOf',
+    args: [userAddress],
   })
 
   const {
-      data: BuyTevaData,
-      write,
-      isLoading: BuyTevaLoading,
+      data: useContractWriteData,
+      write: buyTevaWithEth,
+      isLoading: isWriteLoading,
       error: waitError,
       isError: iswaitError,
   } = useContractWrite(config)
 
 
-  const {isLoading: BuyTevaLoader} = useWaitForTransaction({
-    hash: BuyTevaData?.hash,
+  const {data: useWaitForTransactionData, isLoading: isWaitLoading} = useWaitForTransaction({
+    hash: useContractWriteData?.hash,
     onSuccess(){
         toast('TEV Purchase Successful')
     },
@@ -110,36 +118,56 @@ function HomePage() {
 })
 
 
-// const contractCaller = async () => {
-//   console.log('hello')
-//   BuyTevaWrite()
-// }
+  const onSubmit = async(values, { setSubmitting, resetForm }) => {
 
-  const onSubmit = (values, { setSubmitting, resetForm }) => {
-
-    let ethVal = values.ETHAmount;
-    let buyerEthToUsdVal = ethVal * getEthToUsdVal(setSubmitting, resetForm);
-    let ethToWei = getEthToWeiValue(ethVal);
-
-    if(isNaN(ethToWei)){
-      ethToWei = '0';
-    }
-    setBuyerEthToWeiVal(ethToWei)
-
-    let TevaPurchaseQty = getEthToTevaValue(buyerEthToUsdVal);
-
-    if(isNaN(TevaPurchaseQty)){
-      TevaPurchaseQty = '0';
-    }
-    setBuyerTevaPurchaseQty(TevaPurchaseQty)
-
-    
-    write?.()
-    console.log('hello')
-
-            
+    setEthVal(values.ETHAmount);
+     
   };
 
+
+  useEffect(() => {
+    // console.log("useContractWriteData", useContractWriteData);
+    // console.log("useContractWaiteData", useWaitForTransactionData);
+    // console.log("getUserEthDeposit", getUserEthDeposit);
+    // console.log("getUserTevaBalance", getUserTevaBalance);
+
+    // if (buyerTevaPurchaseQty !== buyerPrevTevaPurchaseQty) {
+      console.log(buyerPrevTevaPurchaseQty)
+      console.log(buyerTevaPurchaseQty)
+      if (ethVal !== '' ){
+
+        getEthToUsdVal()
+
+
+        if (ethToUsdVal !== '') {
+          const tevaVal = getEthToTevaValue((ethToUsdVal * ethVal))
+          console.log(tevaVal)
+          console.log(ethToUsdVal)
+          setBuyerPrevTevaPurchaseQty(buyerTevaPurchaseQty)
+          setBuyerTevaPurchaseQty(tevaVal)
+
+          if (buyerTevaPurchaseQty) {
+            console.log(buyerPrevTevaPurchaseQty)
+            console.log(buyerTevaPurchaseQty)
+            buyTevaWithEth?.()
+          }
+        }
+
+      }
+    // }
+
+
+    if (getUserEthDeposit) {
+      setUserEthDeposit(ethers.utils.formatEther(getUserEthDeposit))
+    }
+
+    if (getUserTevaBalance) {
+      setUserTevaBalance(ethers.utils.commify(ethers.utils.formatEther(getUserTevaBalance)))
+    }
+
+  }, [ethVal, ethToUsdVal, buyerTevaPurchaseQty, userEthDeposit, userTevaBalance])
+  
+  // , useContractWriteData, useWaitForTransactionData, getUserEthDeposit, getUserTevaBalance
 
   return (
     <>
@@ -158,7 +186,7 @@ function HomePage() {
                         <div className="card height-equal">
                             
                             <div className="card-header">
-                                <h5>Buy TEV</h5>
+                                <h5 style={{textAlign:'center'}}>Buy TEV</h5>
                             </div>
 
                             {isConnected  ? 
@@ -176,8 +204,8 @@ function HomePage() {
                                           <div className="input-group">
                                               <Field type="text" name="ETHAmount" id="ETHAmount" className="form-control" placeholder="eg : 1" />
                                               
-                                              <button type="submit" className="btn btn-primary-gradien" disabled={isSubmitting || BuyTevaLoading || BuyTevaLoader} >
-                                          {(BuyTevaLoading || BuyTevaLoader) ? "Loading..." : "Buy TEV"}</button>
+                                              <button type="submit" className="btn btn-primary-gradien" disabled={isSubmitting || isWriteLoading || isWaitLoading} >
+                                          {(isWriteLoading || isWaitLoading) ? "Loading..." : "Buy TEV"}</button>
                                           </div>
                                           <ErrorMessage name="ETHAmount" component="div" style={{color: '#EB844E'}} />
 
@@ -188,13 +216,18 @@ function HomePage() {
 
                             :
                             
-                              <p>Connect wallet to buy Teva</p>
+                              <p style={{textAlign:'center'}}>Connect wallet to buy Teva</p>
                             
                             }
 
 
-                            {(iswaitError || isError) && (
-                                <p>Error: {(waitError  || error)?.message}</p>
+                            {(iswaitError || isError) && (waitError || error)?.code !== "INVALID_ARGUMENT" && isConnected &&  (
+                              <>
+                                <p style={{textAlign:'center'}}>Error: Something went wrong 
+                                </p>
+                                <p style={{textAlign:'center'}}>Reason : {(waitError || error)?.code}</p>
+                              </>
+                                
                             )}
 
                         </div>
@@ -211,8 +244,25 @@ function HomePage() {
                                                 <div className="media-body">
                                                     <p className="mb-0">Total ETH Spent</p>
                                                     <h3 className="mt-0 mb-0 f-w-600">
-                                                      <span className="counter">{utils.formatEther(buyerEthToWeiVal)} ETH</span>
-                                                      <span><TrendingUp /></span></h3>
+                                                      
+                                                      {!userEthDeposit ? (
+                                                        <ThreeDots 
+                                                          height="80" 
+                                                          width="80" 
+                                                          radius="9"
+                                                          color="#4fa94d" 
+                                                          ariaLabel="three-dots-loading"
+                                                          wrapperStyle={{}}
+                                                          wrapperClassName=""
+                                                          visible={true}
+                                                        />
+                                                      ) : (
+                                                        <>
+                                                          <span className="counter">{isConnected  ? userEthDeposit : '-.--' } BTC</span>
+                                                          <span><TrendingUp /></span>
+                                                        </>
+                                                      )}
+                                                    </h3>
                                                 </div>
                                             </div>
                                             <div className="progress sm-progress-bar progress-animate">
@@ -232,8 +282,24 @@ function HomePage() {
                                                 <div className="media-body">
                                                     <p className="mb-0">TEV Acquired</p>
                                                     <h3 className="mt-0 mb-0 f-w-600">
-                                                      <span className="counter">{utils.formatEther(buyerTevaPurchaseQty)} TEV</span>
-                                                      <span><TrendingUp /></span></h3>
+                                                      {!userEthDeposit ? (
+                                                        <ThreeDots 
+                                                          height="80" 
+                                                          width="80" 
+                                                          radius="9"
+                                                          color="#4fa94d" 
+                                                          ariaLabel="three-dots-loading"
+                                                          wrapperStyle={{}}
+                                                          wrapperClassName=""
+                                                          visible={true}
+                                                        />
+                                                      ) : (
+                                                        <>
+                                                          <span className="counter">{isConnected  ? userTevaBalance : '-.--' } TEV</span>
+                                                          <span><TrendingUp /></span>
+                                                        </>
+                                                      )}
+                                                    </h3>
                                                 </div>
                                             </div>
                                             <div className="progress sm-progress-bar progress-animate">

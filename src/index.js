@@ -23,8 +23,8 @@ const { chains, provider, webSocketProvider } = configureChains(
   // chains we support 
   [mainnet, goerli],
   [
-  alchemyProvider({apiKey: env.ALCHEMY_GOERLI_API_KEY}), 
   infuraProvider({apiKey: env.INFURA_API_KEY}), 
+  alchemyProvider({apiKey: env.ALCHEMY_GOERLI_API_KEY}), 
   publicProvider()],
  
 );

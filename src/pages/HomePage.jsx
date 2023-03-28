@@ -111,10 +111,28 @@ function HomePage() {
   const {data: useWaitForTransactionData, isLoading: isWaitLoading} = useWaitForTransaction({
     hash: useContractWriteData?.hash,
     onSuccess(){
-        toast('TEV Purchase Successful')
+        toast('TEV Purchase Successful', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+      })
     },
     onError(data){
-        toast('ERROR: Something went wrong') 
+        toast('ERROR: Something went wrong',  {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+      }) 
         console.log(data)
     }
 
@@ -165,17 +183,39 @@ function HomePage() {
       setUserTevaBalance(ethers.utils.commify(ethers.utils.formatEther(getUserTevaBalance).toString()))
     }
 
+    console.log(useContractWriteData)
     if (useContractWriteData) {
-      toast('Transaction sending')
+      console.log(useContractWriteData)
+      toast('Transaction sending', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      })
     }
 
+    console.log(useWaitForTransactionData)
     if (useWaitForTransactionData) {
-      toast('Transaction completed')
+      console.log(useWaitForTransactionData)
+      toast('Transaction completed', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      })
     }
 
     // return 
 
-  }, [ethVal, ethToUsdVal, buyerTevaPurchaseQty, userEthDeposit, userTevaBalance, getUserTevaBalance, useWaitForTransactionData])
+  }, [ethVal, ethToUsdVal, buyerTevaPurchaseQty, userEthDeposit, userTevaBalance, getUserTevaBalance, useWaitForTransactionData, useContractWriteData])
   
   // , useContractWriteData, useWaitForTransactionData, getUserEthDeposit, getUserTevaBalance
 

@@ -175,7 +175,7 @@ function HomePage() {
 
     // return 
 
-  }, [ethVal, ethToUsdVal, buyerTevaPurchaseQty, userEthDeposit, userTevaBalance])
+  }, [ethVal, ethToUsdVal, buyerTevaPurchaseQty, userEthDeposit, userTevaBalance, getUserTevaBalance, useWaitForTransactionData])
   
   // , useContractWriteData, useWaitForTransactionData, getUserEthDeposit, getUserTevaBalance
 

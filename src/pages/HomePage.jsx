@@ -165,6 +165,14 @@ function HomePage() {
       setUserTevaBalance(ethers.utils.commify(ethers.utils.formatEther(getUserTevaBalance).toString()))
     }
 
+    if (useContractWriteData) {
+      toast('Transaction sending')
+    }
+
+    if (useWaitForTransactionData) {
+      toast('Transaction completed')
+    }
+
     // return 
 
   }, [ethVal, ethToUsdVal, buyerTevaPurchaseQty, userEthDeposit, userTevaBalance])

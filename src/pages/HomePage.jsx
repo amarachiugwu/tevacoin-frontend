@@ -52,7 +52,11 @@ function HomePage() {
 
   const getEthToUsdVal = () => {
     axios
-    .get("https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd")
+    .get("https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd",
+    {headers: {
+      'Retry-After': '120',
+      'Access-Control-Allow-Origin': '*' // Allow requests from any origin
+    }})
     .then(res => { 
 
         if(res.data){
@@ -156,6 +160,8 @@ function HomePage() {
     if (getUserTevaBalance) {
       setUserTevaBalance(ethers.utils.commify(getUserTevaBalance.toString()))
     }
+
+    // return 
 
   }, [ethVal, ethToUsdVal, buyerTevaPurchaseQty, userEthDeposit, userTevaBalance])
   

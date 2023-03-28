@@ -133,19 +133,22 @@ function HomePage() {
     // console.log("getUserEthDeposit", getUserEthDeposit);
     // console.log("getUserTevaBalance", getUserTevaBalance);
 
-
+    console.log(buyerPrevTevaPurchaseQty)
+    console.log(buyerTevaPurchaseQty)
     if (buyerTevaPurchaseQty !== buyerPrevTevaPurchaseQty) {
 
+      console.log(ethVal)
       if (ethVal !== '' ){
 
         getEthToUsdVal()
 
+        console.log(ethToUsdVal)
         if (ethToUsdVal !== '') {
           const tevaVal = getEthToTevaValue((ethToUsdVal * ethVal))
           setBuyerPrevTevaPurchaseQty(buyerTevaPurchaseQty)
-          // console.log(ethers.utils.parseEther(buyerTevaPurchaseQty))
           setBuyerTevaPurchaseQty(tevaVal)
 
+          console.log(buyerTevaPurchaseQty)
           if (buyerTevaPurchaseQty) {
             buyTevaWithEth?.()
           }

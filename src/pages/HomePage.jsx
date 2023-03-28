@@ -159,7 +159,7 @@ function HomePage() {
     }
 
     if (getUserTevaBalance) {
-      setUserTevaBalance(ethers.utils.commify(getUserTevaBalance.toString()))
+      setUserTevaBalance(ethers.utils.commify(ethers.utils.formatEther(getUserTevaBalance).toString()))
     }
 
     // return 

@@ -79,7 +79,7 @@ function HomePage() {
       abi: TevaSwap.abi,
       functionName: 'buyTeva',
       args: [
-        buyerTevaPurchaseQty
+        ethers.utils.parseUnits(ethers.utils.formatEther((buyerTevaPurchaseQty * 10 ** 18).toString()))
       ],
       overrides: {
         value: ethers.utils.parseUnits(ethers.utils.formatEther((ethVal * 10 ** 18).toString()))
@@ -143,6 +143,7 @@ function HomePage() {
         if (ethToUsdVal !== '') {
           const tevaVal = getEthToTevaValue((ethToUsdVal * ethVal))
           setBuyerPrevTevaPurchaseQty(buyerTevaPurchaseQty)
+          // console.log(ethers.utils.parseEther(buyerTevaPurchaseQty))
           setBuyerTevaPurchaseQty(tevaVal)
 
           if (buyerTevaPurchaseQty) {

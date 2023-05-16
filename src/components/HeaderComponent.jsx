@@ -14,7 +14,7 @@ export default function HeaderComponent() {
     <div className="page-main-header">
         <div className="main-header-right row">
           <div className="main-header-left d-lg-none">
-            <div className="logo-wrapper"><a href="/index"><img width="137" height="40" src="../assets/images/creative-logo1.png" alt=""/></a></div>
+            <div className="logo-wrapper"><a href="/index"><img width="35" height="35" src="../assets/images/creative-logo1.png" alt=""/></a></div>
           </div>
           
           <div className="mobile-sidebar d-block" style={{float:'left'}}>

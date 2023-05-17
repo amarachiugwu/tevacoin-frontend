@@ -21,7 +21,7 @@ import env from "react-dotenv";
 
 const { chains, provider, webSocketProvider } = configureChains(
   // chains we support 
-  [mainnet, goerli],
+  [mainnet],
   [
   // infuraProvider({apiKey: env.INFURA_API_KEY}), 
   // alchemyProvider({apiKey: env.ALCHEMY_GOERLI_API_KEY}), 

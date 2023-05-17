@@ -1,3 +1,3 @@
-export const TevaSwapContract = "0x045351B88FfcEBe2883dDA5818A0bB1405F2085f";
+export const TevaSwapContract = "0x5a7E732a6Ab28df33b7648B5392221E001dbe56E";
 export const TevaPrice = 0.3;
-export const minPurchaseEthAmt = 0.001
+export const minPurchaseEthAmt = 0.001;
